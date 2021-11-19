@@ -1,0 +1,15 @@
+<div class="hl__header-child">
+  <div>
+    <a href="#content" accesskey="S" onclick="$('#content').focus();" class="sr-only sr-only-focusable visually-hidden-focusable">Skip to Main Content</a>
+  </div>
+  <h1 class="hl__header-child__title ">
+    <a href="/" title="MPS Viewer"><span>MPS</span> Viewer</a>
+  </h1>
+  <div class="hl__header-child__logo">
+    <div class="hl__linked-image">
+      <a href="https://library.harvard.edu/" title="Harvard Library">
+        <img class="hl__image " alt="Harvard Library Logo" height="24" width="270" src="/images/logo-hl-h.svg"/>
+      </a>
+    </div>
+  </div>
+</div>

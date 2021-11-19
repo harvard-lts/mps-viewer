@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+  <head>
+    <title><%= it.title %></title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Basic Mirador</title>
+    <script type="text/javascript">
+        miradorOptions = {
+            objectType: '<%= it.objectType %>',
+            objectId: <%= it.objectId %>,
+        }
+    </script>
+  </head>
+  <body>
+    <div id="demo"></div>
+    <script src="/js/dist/mirador.js"></script>
+  </body>
+</html>
