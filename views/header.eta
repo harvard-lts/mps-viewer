@@ -8,7 +8,7 @@
   <div class="hl__header-child__logo">
     <div class="hl__linked-image">
       <a href="https://library.harvard.edu/" title="Harvard Library">
-        <img class="hl__image " alt="Harvard Library Logo" height="24" width="270" src="/images/logo-hl-h.svg"/>
+        <img class="hl__image " alt="Harvard Library Logo" height="24" width="270" src="../public/images/logo-hl-h.svg"/>
       </a>
     </div>
   </div>
