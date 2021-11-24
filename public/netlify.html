@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>MPS Viewer</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/vnd.microsoft.icon">
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://bootstrapbuildspace.sfo2.cdn.digitaloceanspaces.com//WCXlTrwTUnMt/ACnrgCvRXvVr/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/compiled/style.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+  </head>
+  <body>
+    <header>
+        <div class="hl__header-child">
+            <div>
+              <a href="#content" accesskey="S" onclick="$('#content').focus();" class="sr-only sr-only-focusable visually-hidden-focusable">Skip to Main Content</a>
+            </div>
+            <h1 class="hl__header-child__title ">
+              <a href="/" title="MPS Viewer"><span>MPS</span> Viewer</a>
+            </h1>
+            <div class="hl__header-child__logo">
+              <div class="hl__linked-image">
+                <a href="https://library.harvard.edu/" title="Harvard Library">
+                  <img class="hl__image " alt="Harvard Library Logo" height="24" width="270" src="/images/logo-hl-h.svg"/>
+                </a>
+              </div>
+            </div>
+          </div>
+    </header>
+
+    <main>
+        <div id="main-container" class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <iframe id="miradorViewer"
+                        title="Mirador Viewer"
+                        width="1200px"
+                        height="700px"
+                        src="/viewer.html?type=ids&id=44753773"
+                        allowfullscreen="true">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="container-fluid hl__footer">
+        <div class="row justify-content-between">
+            <div id="copyright" class="col-lg-9 col-md-6">&copy;2021 President and Fellows of Harvard College</div>
+            <div id="feedback" class="col-lg-3 col-md-6"><a href="https://nrs.harvard.edu/urn-3:hul.ois:reportaproblem" target="_blank">Report a Problem</a></div>
+          </div>
+    </footer>
+  </body>
+</html>
