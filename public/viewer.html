@@ -5,10 +5,13 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Basic Mirador</title>
-    <script type="text/javascript">
+    <script src="/js/netlify.js"></script>
+    <script type="application/javascript">
+        var objectType = getObjectType();
+        var objectId = getObjectId();
         miradorOptions = {
-            objectType: 'ids',
-            objectId: 44753773,
+          objectType: objectType,
+          objectId: objectId,
         }
     </script>
   </head>
