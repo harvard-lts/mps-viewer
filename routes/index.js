@@ -2,8 +2,9 @@ const express = require('express');
 const router = express.Router();
 const qs = require('query-string');
 const eta = require('eta');
-
 const path = require('path');
+const embedCtrl = require('../controllers/embed.ctrl');
+
 
 const { body,validationResult } = require('express-validator');
 
@@ -18,12 +19,17 @@ router.get("/", function (req, res) {
   });
 });
 
-router.get("/example/:objectType/:objectId", function (req, res) {
+router.get("/example/:recordIdentifier", async function (req, res) {
+    embed = await embedCtrl.getEmbed(req.params.recordIdentifier);
+
+    viewerURL = embed.data.html;
+    title = embed.data.title;
+    iiifManifest = embed.data.iiif_manifest;
+
     res.render("example", {
-        title: "Docker NodeJS Template!",
-        body: "Hello, World!",
-        objectType: req.params.objectType,
-        objectId: req.params.objectId,
+        title: title,
+        viewerURL: viewerURL,
+        iiifManifest: iiifManifest,
     });
 });
 

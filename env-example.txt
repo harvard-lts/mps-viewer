@@ -1,2 +1,5 @@
 # Environment 'development', 'test', or 'production'
 ENV=development
+
+# Determine what embed server to use
+#EMBED_BASE_URL=https://localhost:23018
