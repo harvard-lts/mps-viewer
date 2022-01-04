@@ -19,9 +19,7 @@
     <% if (it.viewerURL) { %>
     <div class="row">
         <div class="col-md-12">
-            <%= it.viewerURL %>
-            <%~ '<iframe src=\"https://viewer-qa.lib.harvard.edu/viewer/ids/10274484\" height=\"700px\" width=\"1200px\" title=\"MPS Viewer\" frameborder=\"0\" marginwidth=\"0\" marginheight=\"0\" scrolling=\"no\" allowfullscreen></iframe>\n' %>
-
+            <%~ it.viewerURL %>
         </div>
     </div>
     <% } %>
