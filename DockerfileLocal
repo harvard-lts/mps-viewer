@@ -1,7 +1,8 @@
 FROM node:lts-alpine
 
 # Install packages
-RUN apk add --no-cache bash && \
+RUN apk update && \ 
+  apk add --no-cache bash && \
   apk add curl && \
   apk add openssl && \
   deluser --remove-home node && \
@@ -10,7 +11,7 @@ RUN apk add --no-cache bash && \
 USER node
 # Append SAN section to openssl.cnf and generate a new self-signed certificate and key
 RUN mkdir -p /home/node/ssl/certs && \
-    cp /etc/ssl/openssl.cnf /home/node/ssl/openssl.cnf && \
+    cp /etc/ssl1.1/openssl.cnf /home/node/ssl/openssl.cnf && \
     printf "[SAN]\nsubjectAltName=DNS:*.hul.harvard.edu,DNS:*.lts.harvard.edu" >> /home/node/ssl/openssl.cnf && \
     openssl req -new -newkey rsa:4096 -days 3650 -nodes -x509 -subj "/C=US/ST=Massachusetts/L=Cambridge/O=Library Technology Services/CN=*.lib.harvard.edu" -extensions SAN -reqexts SAN -config /home/node/ssl/openssl.cnf -keyout /home/node/ssl/certs/server.key -out /home/node/ssl/certs/server.crt && \
     mkdir -p /home/node/app

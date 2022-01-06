@@ -1,2 +1,8 @@
 # Environment 'development', 'test', or 'production'
 ENV=development
+
+# Determine what embed server to use
+EMBED_BASE_URL=https://<your IPV4 address>:23018
+
+# Set this to 'false' for local testing. Set to 'true' for other environments
+REJECT_UNAUTHORIZED_CERT=false
