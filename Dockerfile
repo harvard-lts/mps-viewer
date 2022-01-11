@@ -27,9 +27,6 @@ COPY --chown=node:node . /home/node/app
 # where available (npm@5+)
 COPY --chown=node:node package*.json ./
 
-USER root
-RUN npm install jest --global
-USER node
 RUN npm install
 RUN npm run webpack
 # If you are building your code for production
