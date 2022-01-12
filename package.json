@@ -8,7 +8,8 @@
     "start": "node ./bin/www",
     "devstart": "nodemon ./bin/www -L",
     "devserverstart": "DEBUG=mirador-sandbox:* npm run devstart",
-    "webpack": "webpack --config webpack/webpack.config.js"
+    "webpack": "webpack --config webpack/webpack.config.js",
+    "test": "jest"
   },
   "dependencies": {
     "axios": "^0.24.0",
@@ -44,6 +45,7 @@
     "@babel/preset-react": "^7.16.0",
     "babel-loader": "^8.2.3",
     "clean-webpack-plugin": "^4.0.0",
+    "jest": "^27.4.7",
     "nodemon": "^2.0.13"
   }
 }
