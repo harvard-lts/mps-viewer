@@ -21,8 +21,8 @@ const indexRouter = require('./routes/index');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'eta')
-app.engine('eta', eta.renderFile)
+app.set('view engine', 'eta');
+app.engine('eta', eta.renderFile);
 
 
 // set path for static assets
@@ -56,7 +56,7 @@ app.use(requestLogger('combined', { stream: requestLogStream, flags: 'a', skip: 
 
 // Routes
 app.use(['/healthcheck'], (req, res, next) => {
-    res.status(200).json({ "status": 200, "message": "docker-nodejs-template" });
+    res.status(200).json({ "status": 200, "message": "mps-viewer" });
 });
 app.use('/', indexRouter);
 
