@@ -9,7 +9,12 @@
     "devstart": "nodemon ./bin/www -L",
     "devserverstart": "DEBUG=mirador-sandbox:* npm run devstart",
     "webpack": "webpack --config webpack/webpack.config.js",
-    "test": "jest"
+    "test": "./node_modules/.bin/jest",
+    "test:watch": "./node_modules/.bin/jest --watchAll",
+    "test:coverage": "./node_modules/.bin/jest --coverage",
+    "test:badges": "npm run test:coverage  && jest-coverage-badges-ts",
+    "test:unit": "./node_modules/.bin/jest --testPathPattern=__tests__/unit",
+    "test:integration": "./node_modules/.bin/jest --testPathPattern=__tests__/integration"
   },
   "dependencies": {
     "axios": "^0.24.0",
@@ -19,6 +24,7 @@
     "eta": "^1.12.3",
     "express": "^4.17.1",
     "express-validator": "^6.13.0",
+    "jest-coverage-badges-ts": "^0.1.4",
     "jquery": "^3.6.0",
     "mirador": "^3.2.0",
     "mirador-dl-plugin": "^0.13.0",
@@ -46,6 +52,7 @@
     "babel-loader": "^8.2.3",
     "clean-webpack-plugin": "^4.0.0",
     "jest": "^27.4.7",
-    "nodemon": "^2.0.13"
+    "nodemon": "^2.0.13",
+    "supertest": "^6.2.1"
   }
 }

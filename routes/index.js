@@ -8,10 +8,6 @@ const embedCtrl = require('../controllers/embed.ctrl');
 
 const { body,validationResult } = require('express-validator');
 
-const getUserFromReq = (req) => {
-    return req.token && req.token.user || null;
-}
-
 router.get("/", function (req, res) {
   res.render("index", {
       title: "Welcome to the MPS Viewer!",
