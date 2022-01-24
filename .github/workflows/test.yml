@@ -3,6 +3,8 @@ on: push
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      ENV: development
     steps:
       - uses: actions/checkout@v2
       - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
@@ -13,5 +15,8 @@ jobs:
       - name: Run webpack
         run: npm run webpack
       - name: Run tests
-        run: npm run test:unit
+        env: 
+          EMBED_BASE_URL: https://embed-qa.lib.harvard.edu
+          REJECT_UNAUTHORIZED_CERT: false
+        run: npm run test
       - run: echo "This job's status is ${{ job.status }}."  
