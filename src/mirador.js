@@ -15,6 +15,9 @@ const config = {
     imageToolsOpen: false,
     manifestId: 'https://iiif.lib.harvard.edu/manifests/'+objectType+':'+objectId,
   }],
+  workspace: {
+    showZoomControls: true,
+  },
   themes: {
     dark: {
       palette: {
