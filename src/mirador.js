@@ -3,6 +3,8 @@ import { miradorImageToolsPlugin } from 'mirador-image-tools';
 import miradorSharePlugin from 'mirador-share-plugin';
 import miradorDownloadPlugin from 'mirador-dl-plugin';
 import harvardBranding from '../plugins/harvard_branding';
+import harvardHelp from '../plugins/harvard_help';
+
 
 let objectType = window.miradorOptions['objectType'];
 let objectId = window.miradorOptions['objectId'];
@@ -11,7 +13,7 @@ const config = {
   id: 'demo',
   selectedTheme: 'light',
   windows: [{
-    imageToolsEnabled: true,
+    imageToolsEnabled: false,
     imageToolsOpen: false,
     manifestId: 'https://iiif.lib.harvard.edu/manifests/'+objectType+':'+objectId,
   }],
@@ -303,6 +305,7 @@ const config = {
   translations: { // list of these from mirador/src/locales/en/translation.json
     "en": {
       "cancel": "Close",
+      "canvasIndex": "Table of Contents"
     }
   },
   miradorSharePlugin: {
@@ -324,10 +327,11 @@ const config = {
 };
 
 const plugins = [
-  ...miradorImageToolsPlugin,
-  ...miradorSharePlugin,
   ...miradorDownloadPlugin,
-  harvardBranding
+  ...miradorSharePlugin,
+  ...miradorImageToolsPlugin,
+  harvardBranding,
+  harvardHelp,
 ]
 
 Mirador.viewer(config, plugins);
