@@ -8,8 +8,6 @@ import DialogTitle from '@material-ui/core/DialogTitle';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import Typography from '@material-ui/core/Typography';
-import { getCanvasLabel, getVisibleCanvases, selectInfoResponse } from 'mirador/dist/es/src/state/selectors/canvases';
-import { getWindowViewType } from 'mirador/dist/es/src/state/selectors/windows';
 import { getContainerId } from 'mirador/dist/es/src/state/selectors/config';
 
 const mapDispatchToProps = (dispatch, { windowId }) => ({
@@ -17,12 +15,7 @@ const mapDispatchToProps = (dispatch, { windowId }) => ({
 });
 
 const mapStateToProps = (state, { windowId }) => ({
-  canvases: getVisibleCanvases(state, { windowId }),
-  canvasLabel: canvasId => (getCanvasLabel(state, { canvasId, windowId })),
-  containerId: getContainerId(state),
-  infoResponse: canvasId => (selectInfoResponse(state, { windowId, canvasId }) || {}),
   open: (state.windowDialogs[windowId] && state.windowDialogs[windowId].openDialog === 'template'),
-  viewType: getWindowViewType(state, { windowId }),
 });
 
 
@@ -35,14 +28,10 @@ export class templateDialog extends Component {
   */
   render() {
     const {
-      canvases,
-      canvasLabel,
       classes,
       closeDialog,
       containerId,
-      infoResponse,
       open,
-      viewType,
       windowId,
     } = this.props;
 
@@ -77,19 +66,13 @@ export class templateDialog extends Component {
 }
 
 templateDialog.propTypes = {
-  canvasLabel: PropTypes.func.isRequired,
-  canvases: PropTypes.arrayOf(
-    PropTypes.shape({ id: PropTypes.string, index: PropTypes.number }),
-  ),
   classes: PropTypes.shape({
     h2: PropTypes.string,
     h3: PropTypes.string,
   }).isRequired,
   closeDialog: PropTypes.func.isRequired,
   containerId: PropTypes.string.isRequired,
-  infoResponse: PropTypes.func.isRequired,
   open: PropTypes.bool,
-  viewType: PropTypes.string.isRequired,
   windowId: PropTypes.string.isRequired,
 };
 
