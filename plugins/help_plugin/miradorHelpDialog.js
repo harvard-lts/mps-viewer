@@ -67,23 +67,32 @@ export class harvardHelpDialog extends Component {
           </DialogContentText>
           
           <List>
-            <ListItemLink href="#">
+            <ListItemLink href="https://docs.google.com/presentation/d/e/2PACX-1vRtpx-naAyksS0J5Jboe84367F4WXnS4gKabW0LiEihlft5HZCoO9dalZhrMVw7SUgvBDYEDrNpYvh1/embed?start=true&loop=true&delayms=10000#slide=id.g5bba0209b1_1_0" target="_blank" rel="noopener">
               <ListItemIcon>
                 <StarIcon />
               </ListItemIcon>
-              <ListItemText>Take a tour</ListItemText>
+              <ListItemText>
+                Take a tour
+                <Typography variant="srOnly">(opens in a new tab)</Typography>
+              </ListItemText>
             </ListItemLink>
-            <ListItemLink href="#">
+            <ListItemLink href="https://wiki.harvard.edu/confluence/display/LibraryStaffDoc/Harvard+Library+Viewer" target="_blank" rel="noopener">
               <ListItemIcon>
                 <DescriptionIcon />
               </ListItemIcon>
-              <ListItemText>Read documentation</ListItemText>
+              <ListItemText>
+                Read documentation
+                <Typography variant="srOnly">(opens in a new tab)</Typography>
+              </ListItemText>
             </ListItemLink>
-            <ListItemLink href="#">
+            <ListItemLink href="https://harvard.az1.qualtrics.com/jfe/form/SV_cA1RwzgmOpI87MF" target="_blank" rel="noopener">
               <ListItemIcon>
                 <ErrorIcon />
               </ListItemIcon>
-              <ListItemText>Report a problem</ListItemText>
+              <ListItemText>
+                Report a problem
+                <Typography variant="srOnly">(opens in a new tab)</Typography>
+              </ListItemText>
             </ListItemLink>
           </List>
         
