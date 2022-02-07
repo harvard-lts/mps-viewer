@@ -26,7 +26,7 @@ class hideViewerNavigation extends Component {
     let viewingHint = this.viewingHint();
 
     if (viewingHint == 'individuals') {
-      const caption = window.document.getElementsByClassName("MuiTypography-caption"); 
+      const caption = window.document.getElementsByClassName("mirador-osd-info"); 
       const pager = window.document.getElementsByClassName("mirador-osd-navigation");
       const divider = window.document.getElementsByClassName("Connect(WithPlugins(ZoomControls))-divider-91");
       while(caption.length > 0){ 
