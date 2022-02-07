@@ -3,6 +3,7 @@ import { miradorImageToolsPlugin } from 'mirador-image-tools';
 import miradorSharePlugin from 'mirador-share-plugin';
 import miradorDownloadPlugin from 'mirador-dl-plugin';
 import harvardBranding from '../plugins/harvard_branding';
+import hideViewerNavigation from '../plugins/hide_viewer_navigation';
 
 let objectType = window.miradorOptions['objectType'];
 let objectId = window.miradorOptions['objectId'];
@@ -327,7 +328,8 @@ const plugins = [
   ...miradorImageToolsPlugin,
   ...miradorSharePlugin,
   ...miradorDownloadPlugin,
-  harvardBranding
+  harvardBranding,
+  hideViewerNavigation,
 ]
 
 Mirador.viewer(config, plugins);
