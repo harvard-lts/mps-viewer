@@ -61,11 +61,7 @@ export class harvardHelpDialog extends Component {
         <DialogTitle disableTypography className={classes.h2}>
           <Typography variant="h2">Help</Typography>
         </DialogTitle>
-        <DialogContent>
-          <DialogContentText>
-            (optional text if need more description)
-          </DialogContentText>
-          
+        <DialogContent>         
           <List>
             <ListItemLink href="https://docs.google.com/presentation/d/e/2PACX-1vRtpx-naAyksS0J5Jboe84367F4WXnS4gKabW0LiEihlft5HZCoO9dalZhrMVw7SUgvBDYEDrNpYvh1/embed?start=true&loop=true&delayms=10000#slide=id.g5bba0209b1_1_0" target="_blank" rel="noopener">
               <ListItemIcon>

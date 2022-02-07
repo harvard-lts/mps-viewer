@@ -5,6 +5,7 @@ import miradorDownloadPlugin from 'mirador-dl-plugin';
 import harvardBranding from '../plugins/harvard_branding';
 import harvardHelp from '../plugins/help_plugin/index';
 import hideViewerNavigation from '../plugins/hide_viewer_navigation';
+import copyrightLabel from '../plugins/copyright-label';
 
 import templatePlugin from '../plugins/dropdown_template/index';
 
@@ -93,6 +94,12 @@ const config = {
           }
         },
         MuiButton: {
+          root: {
+            padding: '5px 9px',
+            '&:not(:first-child)': {
+              marginLeft: '8px',
+            },
+          },
           outlined: {
             color: '#1E1E1E',
             backgroundColor: 'white',
@@ -234,7 +241,10 @@ const config = {
         },
         MuiButton: {
           root: {
-            padding: '5px 9px'
+            padding: '5px 9px',
+            '&:not(:first-child)': {
+              marginLeft: '8px',
+            },
           },
           outlined: {
             color: '#1E1E1E',
@@ -307,7 +317,7 @@ const config = {
   translations: { // list of these from mirador/src/locales/en/translation.json
     "en": {
       "cancel": "Close",
-      "canvasIndex": "Table of Contents"
+      "canvasIndex": "Table of Contents",
     }
   },
   miradorSharePlugin: {
@@ -336,6 +346,7 @@ const plugins = [
   harvardHelp,
   harvardBranding,
   hideViewerNavigation,
+  copyrightLabel
 ]
 
 Mirador.viewer(config, plugins);
