@@ -28,12 +28,16 @@ class hideViewerNavigation extends Component {
     if (viewingHint == 'individuals') {
       const caption = window.document.getElementsByClassName("MuiTypography-caption"); 
       const pager = window.document.getElementsByClassName("mirador-osd-navigation");
+      const divider = window.document.getElementsByClassName("Connect(WithPlugins(ZoomControls))-divider-91");
       while(caption.length > 0){ 
         caption[0].parentNode.removeChild(caption[0]);
       }
       while(pager.length > 0){ 
           pager[0].parentNode.removeChild(pager[0]);
-        }
+      }
+      while(divider.length > 0){ 
+        divider[0].parentNode.removeChild(divider[0]);
+    }
     }
   }
 }
