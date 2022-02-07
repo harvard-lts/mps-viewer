@@ -6,7 +6,7 @@ import harvardBranding from '../plugins/harvard_branding';
 import harvardHelp from '../plugins/help_plugin/index';
 import hideViewerNavigation from '../plugins/hide_viewer_navigation';
 
-import templatePlugin from '../plugins/template/index';
+import templatePlugin from '../plugins/dropdown_template/index';
 
 let objectType = window.miradorOptions['objectType'];
 let objectId = window.miradorOptions['objectId'];
