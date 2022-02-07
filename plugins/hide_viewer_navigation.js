@@ -26,18 +26,9 @@ class hideViewerNavigation extends Component {
     let viewingHint = this.viewingHint();
 
     if (viewingHint == 'individuals') {
-      const caption = window.document.getElementsByClassName("mirador-osd-info"); 
-      const pager = window.document.getElementsByClassName("mirador-osd-navigation");
-      const divider = window.document.getElementsByClassName("Connect(WithPlugins(ZoomControls))-divider-91");
-      while(caption.length > 0){ 
-        caption[0].parentNode.removeChild(caption[0]);
-      }
-      while(pager.length > 0){ 
-          pager[0].parentNode.removeChild(pager[0]);
-      }
-      while(divider.length > 0){ 
-        divider[0].parentNode.removeChild(divider[0]);
-    }
+      window.document.querySelectorAll('.mirador-osd-info').forEach((elem) => elem.remove());
+      window.document.querySelectorAll('.mirador-osd-navigation').forEach((elem) => elem.remove());
+      window.document.querySelectorAll('[class*="Connect(WithPlugins(ZoomControls))-divider-"]').forEach((elem) => elem.remove());
     }
   }
 }
