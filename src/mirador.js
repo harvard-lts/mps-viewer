@@ -7,8 +7,6 @@ import harvardHelp from '../plugins/help_plugin/index';
 import hideViewerNavigation from '../plugins/hide_viewer_navigation';
 import copyrightLabel from '../plugins/copyright-label';
 
-import templatePlugin from '../plugins/dropdown_template/index';
-
 let objectType = window.miradorOptions['objectType'];
 let objectId = window.miradorOptions['objectId'];
 
@@ -346,7 +344,7 @@ const plugins = [
   harvardHelp,
   harvardBranding,
   hideViewerNavigation,
-  copyrightLabel
+  copyrightLabel,
 ]
 
 Mirador.viewer(config, plugins);
