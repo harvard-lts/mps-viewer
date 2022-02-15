@@ -36,13 +36,13 @@ pipeline {
         script {
             if (GIT_TAG != "") {
                 echo "$GIT_TAG"
-                docker.withRegistry(registryUri, ${env.REGISTRY_ID}){
+                docker.withRegistry(registryUri, registryCredentialsId){
                 def customImage = docker.build("registry.lts.harvard.edu/lts/mps-viewer:$GIT_TAG") 
                 customImage.push()
                 }
             } else {
                     echo "$GIT_HASH"
-                    docker.withRegistry(registryUri, ${env.REGISTRY_ID}){
+                    docker.withRegistry(registryUri, registryCredentialsId){
                     // this says build but its really just using the build from above and tagging it
                     def customImage = docker.build("registry.lts.harvard.edu/lts/mps-viewer-snapshot:$GIT_HASH") 
                     customImage.push()
@@ -90,13 +90,13 @@ pipeline {
         script {
             if (GIT_TAG != "") {
                 echo "$GIT_TAG"
-                docker.withRegistry(registryUri, ${env.REGISTRY_ID}){
+                docker.withRegistry(registryUri, registryCredentialsId){
                 def customImage = docker.build("registry.lts.harvard.edu/lts/mps-viewer:$GIT_TAG") 
                 customImage.push()
                 }
             } else {
                     echo "$GIT_HASH"
-                    docker.withRegistry(registryUri, ${env.REGISTRY_ID}){
+                    docker.withRegistry(registryUri, registryCredentialsId){
                     def customImage = docker.build("registry.lts.harvard.edu/lts/mps-viewer-snapshot:$GIT_HASH") 
                     customImage.push()
                     def devImage = docker.build("registry.lts.harvard.edu/lts/mps-viewer-snapshot:dev") 
@@ -142,7 +142,7 @@ pipeline {
         script {
             if (GIT_TAG != "") {
                 echo "$GIT_TAG"
-                docker.withRegistry(registryUri, ${env.REGISTRY_ID}){
+                docker.withRegistry(registryUri, registryCredentialsId){
                 def customImage = docker.build("registry.lts.harvard.edu/lts/mps-viewer:$GIT_TAG") 
                 customImage.push()
                 }
@@ -186,6 +186,7 @@ pipeline {
 
    environment {
     imageName = 'mps-viewer'
+    registryCredentialsId = "${env.REGISTRY_ID}"
     registryUri = 'https://registry.lts.harvard.edu'
    }
  }
