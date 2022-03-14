@@ -4,7 +4,7 @@ import miradorSharePlugin from 'mirador-share-plugin';
 import miradorDownloadPlugin from 'mirador-dl-plugin';
 import harvardBranding from '../plugins/harvard_branding';
 import harvardHelp from '../plugins/help_plugin/index';
-import hideViewerNavigation from '../plugins/hide_viewer_navigation';
+import hideViewerNavigation from '@harvard-lts/mirador-hide-nav-plugin';
 import copyrightLabel from '../plugins/copyright-label';
 
 let objectType = window.miradorOptions['objectType'];
