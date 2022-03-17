@@ -17,6 +17,7 @@
     "test:integration": "./node_modules/.bin/jest --testPathPattern=__tests__/integration"
   },
   "dependencies": {
+    "@harvard-lts/mirador-help-plugin": "^1.0.0",
     "axios": "^0.24.0",
     "body-parser": "^1.19.0",
     "bootstrap": "^4.6.0",
