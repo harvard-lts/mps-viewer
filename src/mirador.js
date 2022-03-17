@@ -3,7 +3,7 @@ import { miradorImageToolsPlugin } from 'mirador-image-tools';
 import miradorSharePlugin from 'mirador-share-plugin';
 import miradorDownloadPlugin from 'mirador-dl-plugin';
 import harvardBranding from '../plugins/harvard_branding';
-import harvardHelp from '../plugins/help_plugin/index';
+import harvardHelp from '@harvard-lts/mirador-help-plugin';
 import hideViewerNavigation from '../plugins/hide_viewer_navigation';
 import copyrightLabel from '../plugins/copyright-label';
 
