@@ -1,10 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const qs = require('query-string');
-const eta = require('eta');
-const path = require('path');
 const embedCtrl = require('../controllers/embed.ctrl');
-
 
 const { body,validationResult } = require('express-validator');
 

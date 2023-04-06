@@ -3,7 +3,7 @@ const https = require('https');
 const app = require('../../app.js');
 const supertest = require('supertest');
 
-axios.defaults.adapter = require('axios/lib/adapters/http');
+axios.defaults.adapter = 'http';
 axios.defaults.httpsAgent = new https.Agent({ rejectUnauthorized: false });
 
 beforeAll( async () => {
