@@ -7,4 +7,4 @@
 // default values: slackChannel = "lts-jenkins-notifications"
 
 def endpoints = []
-ltsBasicPipeline.call("mps-viewer", "MPS-VIEWER", "mps-viewer", "", endpoints, "lts-mps-viewer-alerts") 
+ltsBasicPipeline.call("mps-viewer", "MPS-VIEWER", "mps/mps-viewer", "", endpoints, "lts-mps-viewer-alerts") 
