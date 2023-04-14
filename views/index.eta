@@ -2,17 +2,29 @@
 
 <div id="main-container" class="container">
   <div class="row">
-      <div class="col-md-12">
-        <h2><%= it.title %></h2>
-      </div>
+    <div class="col-md-12">
+      <h2><%= it.title %></h2>
+    </div>
   </div>
   <div class="row">
-      <div class="col-md-12">
-        <div class="list-group">
-        <% it.examples.forEach(function(example){ %>
-          <a href="<%= example.href %>" class="list-group-item list-group-item-action"><%= example.text %></a>
-        <% }) %>
-        </div>
+    <h3>IDS Examples (legacy)</h3>
+    <div class="col-md-12">
+      <div class="list-group">
+      <% it.idsExamples.forEach(function(idsExample){ %>
+        <a href="<%= idsExample.href %>" class="list-group-item list-group-item-action"><%= idsExample.text %></a>
+      <% }) %>
       </div>
+    </div>
+  </div>
+  <div class="row">
+    <h3>MPS Examples</h3>
+    <div class="col-md-12">
+      <h5>v3 manifests</h5>
+      <div class="list-group">
+        <% it.mpsExamples.forEach(function(mpsExample){ %>
+          <a href="<%= mpsExample.href %>" class="list-group-item list-group-item-action"><%= mpsExample.text %></a>
+        <% }) %>
+      </div>
+    </div>
   </div>
 </div>
