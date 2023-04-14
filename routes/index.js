@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const embedCtrl = require('../controllers/embed.ctrl');
+const consoleLogger = require('../logger/logger.js').console;
 
 const { body,validationResult } = require('express-validator');
 
@@ -62,6 +63,9 @@ router.get("/example/:recordIdentifier", async function (req, res) {
     let errorMsg = '';
 
     embed = await embedCtrl.getEmbed(req.params.recordIdentifier);
+
+    consoleLogger.info("/example/:recordIdentifier");
+    consoleLogger.info(embed);
 
     if (embed.hasOwnProperty('error')) {
         errorMsg = embed.error;
