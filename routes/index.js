@@ -64,9 +64,6 @@ router.get("/example/:recordIdentifier", async function (req, res) {
 
     embed = await embedCtrl.getEmbed(req.params.recordIdentifier);
 
-    consoleLogger.info("/example/:recordIdentifier");
-    consoleLogger.info(embed);
-
     if (embed.hasOwnProperty('error')) {
         errorMsg = embed.error;
     }

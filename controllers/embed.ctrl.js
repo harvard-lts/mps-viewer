@@ -9,7 +9,7 @@ embedCtrl.getEmbed = async (recordIdentifier) => {
   // Set request values that are specific to this route
   const requestOptionsData = {
     method: 'GET',
-    url: `${process.env.EMBED_BASE_URL}/api?recordIdentifier=${recordIdentifier}`
+    url: `${process.env.EMBED_BASE_URL}/api/legacy?recordIdentifier=${recordIdentifier}`
   };
 
   return httpCtrl.makeRequest(requestOptionsData);
