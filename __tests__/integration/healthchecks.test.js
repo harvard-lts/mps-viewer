@@ -81,7 +81,7 @@ describe('Test MPS Viewer Successful Example Route', () => {
     test('Successful response from example route', async () => {
         let testsAgent = supertest.agent(app);
         let recordIdentifier = 'HUAM140429_URN-3:HUAM:INV012574P_DYNMC';
-        const response = await testsAgent.get('/example/'+ recordIdentifier)
+        const response = await testsAgent.get('/example/legacy/'+ recordIdentifier)
             .catch(function (error) {
                 console.log(error);
             });
@@ -93,7 +93,7 @@ describe('Test MPS Viewer Failed Example Route', () => {
     test('Failed response from example route', async () => {
         let testsAgent = supertest.agent(app);
         let recordIdentifier = '12345';
-        const response = await testsAgent.get('/example/'+ recordIdentifier)
+        const response = await testsAgent.get('/example/legacy/'+ recordIdentifier)
             .catch(function (error) {
                 console.log(error);
             });
