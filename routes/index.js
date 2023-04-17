@@ -5,7 +5,7 @@ const consoleLogger = require('../logger/logger.js').console;
 
 const { body,validationResult } = require('express-validator');
 
-router.get("/", function (req, res) {
+router.get("/", async (req, res) => {
 
   const idsExamples = [
     {
@@ -56,7 +56,7 @@ router.get("/", function (req, res) {
   });
 });
 
-router.get("/example/:manifestType/:uniqueIdentifier", async function (req, res) {
+router.get("/example/:manifestType/:uniqueIdentifier", async (req, res) => {
     let viewerURL = '';
     let title = '';
     let iiifManifest = '';
@@ -99,11 +99,17 @@ router.get("/example/:manifestType/:uniqueIdentifier", async function (req, res)
     });
 });
 
-router.get("/viewer/:objectType/:objectId", function (req, res) {
+router.get("/viewer", async (req, res) => {
+  consoleLogger.debug("/viewer");
+  consoleLogger.debug(req.query.manifestId);
+
+  const manifestId = decodeURIComponent(req.query.manifestId) || '';
+  consoleLogger.debug("manifestId");
+  consoleLogger.debug(manifestId);
+
   res.render("viewer", {
     title: "Mirador Viewer",
-    objectType: req.params.objectType,
-    objectId: req.params.objectId,
+    manifestId: manifestId
   });
 });
 

@@ -1,26 +1,25 @@
-# Start: `docker-compose -f docker-compose-local.yml up -d --build --force-recreate`
-# Stop: `docker-compose -f docker-compose-local.yml stop`
+# Build all images and start all containers: `docker compose -f docker-compose-local.yml build --no-cache && docker compose -f docker-compose-local.yml up -d`
+# Start containers only: `docker compose -f docker-compose-local.yml up -d`
+# Stop and remove all containers: `docker compose -f docker-compose-local.yml down`
 
 version: '3.7'
 services:
-
   app:
     container_name: mps-viewer
     build:
       context: ./
-      dockerfile: DockerfileLocal
+      dockerfile: Dockerfile
     env_file: .env
     command: npm run devserverstart
     volumes:
-      - './:/home/node/app'
-      - '/home/node/app/node_modules'
-      - '/home/node/app/public/js/dist'
+      - './:/home/mpsadm'
+      - '/home/mpsadm/node_modules'
+      - '/home/mpsadm/public/js/dist'
     ports:
       - "23017:8081"
     # Join this service to a custom docker network
     networks:
       - mps-net
-
 
   # Create a custom docker network if it does not exist already
 networks:

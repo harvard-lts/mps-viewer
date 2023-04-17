@@ -7,12 +7,13 @@
     <title>Basic Mirador</title>
     <script type="text/javascript">
         miradorOptions = {
-            objectType: '<%= it.objectType %>',
-            objectId: <%= it.objectId %>,
+          manifestId: <%= it.manifestId %>
         }
     </script>
   </head>
   <body>
+    <span><%= it.manifestId %></span>
+    <h1>Mirador 3</h1>
     <div id="demo"></div>
     <script src="/js/dist/mirador.js"></script>
   </body>

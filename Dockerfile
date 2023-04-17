@@ -1,36 +1,37 @@
-FROM node:lts-alpine
+FROM node:lts-slim
 
-# Install packages
-RUN apk update && \ 
-  apk add --no-cache bash && \
-  apk add curl && \
-  apk add openssl && \
-  deluser --remove-home node && \
-  adduser -h /home/node -s /bin/sh -u 193 -D -g 'Node User' node
+ENV APP_ID_NUMBER=193
+ENV APP_ID_NAME=mpsadm
+ENV GROUP_ID_NUMBER=199
+ENV GROUP_ID_NAME=appadmin
 
-USER node
-# Append SAN section to openssl.cnf and generate a new self-signed certificate and key
+RUN apt update -y && \
+  apt install -y curl git openssl
+
+RUN deluser --remove-home node && \
+  DEBIAN_FRONTEND=non-interactive && \
+  groupadd -g ${GROUP_ID_NUMBER} ${GROUP_ID_NAME} && \
+  useradd -l -s /bin/bash -m -u ${APP_ID_NUMBER} -g ${GROUP_ID_NAME} ${APP_ID_NAME}
+
 RUN mkdir -p /home/node/ssl/certs && \
-    cp /etc/ssl/openssl.cnf /home/node/ssl/openssl.cnf && \
-    printf "[SAN]\nsubjectAltName=DNS:*.hul.harvard.edu,DNS:*.lts.harvard.edu" >> /home/node/ssl/openssl.cnf && \
-    openssl req -new -newkey rsa:4096 -days 3650 -nodes -x509 -subj "/C=US/ST=Massachusetts/L=Cambridge/O=Library Technology Services/CN=*.lib.harvard.edu" -extensions SAN -reqexts SAN -config /home/node/ssl/openssl.cnf -keyout /home/node/ssl/certs/server.key -out /home/node/ssl/certs/server.crt && \
-    mkdir -p /home/node/app
+  cp /etc/ssl/openssl.cnf /home/node/ssl/openssl.cnf && \
+  printf "[SAN]\nsubjectAltName=DNS:*.hul.harvard.edu,DNS:*.lts.harvard.edu" >> /home/node/ssl/openssl.cnf && \
+  openssl req -new -newkey rsa:4096 -days 3650 -nodes -x509 -subj "/C=US/ST=Massachusetts/L=Cambridge/O=Library Technology Services/CN=*.lib.harvard.edu" -extensions SAN -reqexts SAN -config /home/node/ssl/openssl.cnf -keyout /home/node/ssl/certs/server.key -out /home/node/ssl/certs/server.crt && \
+  mkdir -p /home/${APP_ID_NAME} && \
+  chown -R ${APP_ID_NAME}:${GROUP_ID_NAME} /home/node && \
+  chown -R ${APP_ID_NAME}:${GROUP_ID_NAME} /home/${APP_ID_NAME}
 
-# Set working directory
-WORKDIR /home/node/app
+# Guarantees umask is set properly to alleviate issue with umask not sticking inside the node container
+# This is to ensure permissions of files stored on the server will be given the correct permissions
+# This is required for node apps that write files out to the host filesystem
+RUN echo 'umask 002' >> /home/${APP_ID_NAME}/.profile && \
+  echo 'umask 002' >> /home/${APP_ID_NAME}/.bashrc
 
-# Copy code
-COPY --chown=node:node . /home/node/app
+WORKDIR /home/${APP_ID_NAME}
+COPY . /home/${APP_ID_NAME}
 
-# Install app dependencies
-# A wildcard is used to ensure both package.json AND package-lock.json are copied
-# where available (npm@5+)
-COPY --chown=node:node package*.json ./
+RUN node_modules/.cache/webpack && npm install && npm run webpack
 
-RUN npm install
-RUN npm run webpack
-# If you are building your code for production
-# RUN npm ci --only=production
+USER ${APP_ID_NAME}
 
-EXPOSE 23017 8081
 CMD [ "npm", "start" ]
