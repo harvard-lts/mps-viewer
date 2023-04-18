@@ -64,8 +64,8 @@ describe('Test MPS Viewer 404', () => {
   });
 });
 
-describe('Test MPS Viewer Route', () => {
-  test('Successful response from viewer route', async () => {
+describe('Test MPS Viewer Route Legacy', () => {
+  test('Successful response from viewer route legacy', async () => {
     let testsAgent = supertest.agent(app);
     let objectType = 'ids';
     let objectId = '42929359';
@@ -98,6 +98,34 @@ describe('Test MPS Viewer Failed Example Route', () => {
     let testsAgent = supertest.agent(app);
     let recordIdentifier = '12345';
     const response = await testsAgent.get('/example/legacy/'+ recordIdentifier)
+        .catch(function (error) {
+            console.log(error);
+        });
+    expect(response.status).toBe(200);
+  });
+});
+
+describe('Test MPS Viewer Route MPS manifest v2', () => {
+  test('Successful response from viewer route MPS manifest v2', async () => {
+    let testsAgent = supertest.agent(app);
+
+    const manifestId = 'https://mps.lib.harvard.edu/iiif/2/URN-3:FHCL:100252142';
+
+    const response = await testsAgent.get(`/viewer?manifestId=${manifestId}`)
+        .catch(function (error) {
+            console.log(error);
+        });
+    expect(response.status).toBe(200);
+  });
+});
+
+describe('Test MPS Viewer Route MPS manifest v3', () => {
+  test('Successful response from viewer route MPS manifest v3', async () => {
+    let testsAgent = supertest.agent(app);
+
+    const manifestId = 'https://mps.lib.harvard.edu/iiif/3/URN-3:FHCL:100252142';
+
+    const response = await testsAgent.get(`/viewer?manifestId=${manifestId}`)
         .catch(function (error) {
             console.log(error);
         });
