@@ -23,12 +23,4 @@
         </div>
     </div>
     <% } %>
-    <div class="row">
-        <div class="col-md-12">
-            <p><b>Add this resource to see what a version 3 manifest looks like in the viewer</b></p>
-            <ul>
-                <li><a href="https://mps-dev.lib.harvard.edu/iiif/c/URN-3:TEST:67890">https://mps-dev.lib.harvard.edu/iiif/c/URN-3:TEST:67890</a></li>
-            </ul>
-        </div>
-    </div>
 </div>

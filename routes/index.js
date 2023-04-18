@@ -40,13 +40,35 @@ router.get("/", async (req, res) => {
 
   const mpsExamples = [
     {
-      "href": "/example/mps/URN-3:HUL.OIS:1254762",
-      "text": "Society for Basic Irreproducible Research"
+      "href": "/example/mps/URN-3:FHCL:100001249?manifestVersion=2",
+      "text": "Tibetan Buddhist Resource Center",
+      "version": 2
     },
     {
-      "href": "/example/mps/URN-3:FHCL:100252142",
-      "text": "Harvard-Yale Baseball Game. Holmes Field, photograph, 1885"
-    }
+      "href": "/example/mps/URN-3:FHCL:100001249?manifestVersion=2",
+      "text": "Tibetan Buddhist Resource Center",
+      "version": 3
+    },
+    {
+      "href": "/example/mps/URN-3:FHCL:42632611?manifestVersion=2",
+      "text": "Harvard Yenching Fushun Xian zhi 37 juan",
+      "version": 2
+    },
+    {
+      "href": "/example/mps/URN-3:FHCL:42632611?manifestVersion=3",
+      "text": "Harvard Yenching Fushun Xian zhi 37 juan",
+      "version": 3
+    },
+    {
+      "href": "/example/mps/URN-3:FHCL:100252142?manifestVersion=2",
+      "text": "Harvard-Yale Baseball Game. Holmes Field, photograph, 1885",
+      "version": 2
+    },
+    {
+      "href": "/example/mps/URN-3:FHCL:100252142?manifestVersion=3",
+      "text": "Harvard-Yale Baseball Game. Holmes Field, photograph, 1885",
+      "version": 3
+    },
   ];
 
   res.render("index", {
@@ -66,7 +88,10 @@ router.get("/example/:manifestType/:uniqueIdentifier", async (req, res) => {
     // Manifest type will be either 'mps' or 'legacy'
     const manifestType = req.params.manifestType || 'mps';
     // Manifest version will be 2 or 3
-    const manifestVersion = req.params.manifestVersion || '3';
+    const manifestVersion = req.query.manifestVersion || '3';
+
+    consoleLogger.debug("/example/:manifestType/:uniqueIdentifier");
+    consoleLogger.debug(`uniqueIdentifier ${uniqueIdentifier} manifestType ${manifestType} manifestVersion ${manifestVersion}`);
 
     try {
       embed = await embedCtrl.getEmbed(uniqueIdentifier, manifestType, manifestVersion);
@@ -100,16 +125,9 @@ router.get("/example/:manifestType/:uniqueIdentifier", async (req, res) => {
 });
 
 router.get("/viewer", async (req, res) => {
-  consoleLogger.debug("/viewer");
-  consoleLogger.debug(req.query.manifestId);
-
-  const manifestId = decodeURIComponent(req.query.manifestId) || '';
-  consoleLogger.debug("manifestId");
-  consoleLogger.debug(manifestId);
-
   res.render("viewer", {
     title: "Mirador Viewer",
-    manifestId: manifestId
+    manifestId: req.query.manifestId
   });
 });
 
