@@ -1,6 +1,10 @@
 const embedCtrl = require('../../controllers/embed.ctrl');
 const consoleLogger = require('../../logger/logger.js').console;
 
+beforeAll( async () => {
+  console.log('Running embed tests.');
+});
+
 describe('Embed', () => {
 
   test('Successful response from getEmbed Legacy', async () => {
