@@ -10,7 +10,7 @@ describe('Test MPS Viewer Healthcheck', () => {
   test('Successful response from healthcheck route', async () => {
     const response = await testsAgent.get('/healthcheck')
       .catch(function (error) {
-          console.log(error);
+        console.log(error);
       });
     expect(response.status).toBe(200);
     expect(response.body.hasOwnProperty('message'));
@@ -23,7 +23,7 @@ describe('Test MPS Viewer Homepage', () => {
   test('Successful response from homepage route', async () => {
     const response = await testsAgent.get('/')
       .catch(function (error) {
-          console.log(error);
+        console.log(error);
       });
     expect(response.status).toBe(200);
   });
@@ -33,7 +33,7 @@ describe('Test MPS Viewer 404', () => {
   test('Successful 404 response', async () => {
     const response = await testsAgent.get('/abc/123')
       .catch(function (error) {
-          console.log(error);
+        console.log(error);
       });
     expect(response.status).toBe(404);
   });
@@ -49,7 +49,7 @@ describe('Test MPS Viewer Route Legacy', () => {
 
     const response = await testsAgent.get(`/viewer?manifestId=${manifestId}`)
       .catch(function (error) {
-          console.log(error);
+        console.log(error);
       });
     expect(response.status).toBe(200);
   });
@@ -60,7 +60,7 @@ describe('Test MPS Viewer Successful Example Route', () => {
     let recordIdentifier = 'HUAM140429_URN-3:HUAM:INV012574P_DYNMC';
     const response = await testsAgent.get(`/example/legacy/${recordIdentifier}`)
       .catch(function (error) {
-          console.log(error);
+        console.log(error);
       });
     expect(response.status).toBe(200);
   });
@@ -71,7 +71,7 @@ describe('Test MPS Viewer Failed Example Route', () => {
     let recordIdentifier = '12345';
     const response = await testsAgent.get('/example/legacy/'+ recordIdentifier)
       .catch(function (error) {
-          console.log(error);
+        console.log(error);
       });
     expect(response.status).toBe(200);
   });
@@ -82,7 +82,7 @@ describe('Test MPS Viewer Route MPS manifest v2', () => {
     const manifestId = 'https://mps.lib.harvard.edu/iiif/2/URN-3:FHCL:100252142';
     const response = await testsAgent.get(`/viewer?manifestId=${manifestId}`)
       .catch(function (error) {
-          console.log(error);
+        console.log(error);
       });
     expect(response.status).toBe(200);
   });
@@ -93,7 +93,7 @@ describe('Test MPS Viewer Route MPS manifest v3', () => {
     const manifestId = 'https://mps.lib.harvard.edu/iiif/3/URN-3:FHCL:100252142';
     const response = await testsAgent.get(`/viewer?manifestId=${manifestId}`)
       .catch(function (error) {
-          console.log(error);
+        console.log(error);
       });
     expect(response.status).toBe(200);
   });
