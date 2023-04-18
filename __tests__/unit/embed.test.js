@@ -29,7 +29,7 @@ describe('Embed', () => {
     expect(embed).not.toBeNull();
   });
 
-  test('Successful response from getEmbed Legacy', async () => {
+  test('Successful response from getEmbed MPS', async () => {
     const urn = 'URN-3:FHCL:100252142';
     let embed;
     try {
@@ -42,7 +42,7 @@ describe('Embed', () => {
     expect(embed).not.toBeNull();
   });
 
-  test('Unsuccessful response from getEmbed Legacy', async () => {
+  test('Unsuccessful response from getEmbed MPS', async () => {
     const urn = '12345';
     let embed;
     try {
