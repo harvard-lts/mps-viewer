@@ -6,6 +6,7 @@ import harvardBranding from '../plugins/harvard_branding';
 import hideViewerNavigation from '@harvard-lts/mirador-hide-nav-plugin';
 import harvardHelp from '@harvard-lts/mirador-help-plugin';
 import copyrightLabel from '../plugins/copyright-label';
+import MiradorCustomSearch from '@harvard-library/mirador-custom-text-search-plugin';
 
 let objectType = window.miradorOptions['objectType'];
 let objectId = window.miradorOptions['objectId'];
@@ -316,6 +317,7 @@ const config = {
     "en": {
       "cancel": "Close",
       "canvasIndex": "Table of Contents",
+      "openCompanionWindow_CustomSearch": "Search OCR"
     }
   },
   miradorSharePlugin: {
@@ -340,7 +342,7 @@ const plugins = [
   ...miradorDownloadPlugin,
   ...miradorSharePlugin,
   ...miradorImageToolsPlugin,
-  harvardBranding,
+  ...MiradorCustomSearch,
   harvardHelp,
   harvardBranding,
   hideViewerNavigation,
