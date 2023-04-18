@@ -3,8 +3,6 @@ const router = express.Router();
 const embedCtrl = require('../controllers/embed.ctrl');
 const consoleLogger = require('../logger/logger.js').console;
 
-const { body,validationResult } = require('express-validator');
-
 router.get("/", async (req, res) => {
 
   const idsExamples = [
