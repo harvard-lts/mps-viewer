@@ -30,7 +30,7 @@ RUN echo 'umask 002' >> /home/${APP_ID_NAME}/.profile && \
 WORKDIR /home/${APP_ID_NAME}
 COPY . /home/${APP_ID_NAME}
 
-RUN node_modules/.cache/webpack && npm install && npm run webpack
+RUN npm install && npm run webpack
 
 USER ${APP_ID_NAME}
 

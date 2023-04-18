@@ -7,8 +7,7 @@ import hideViewerNavigation from '@harvard-lts/mirador-hide-nav-plugin';
 import harvardHelp from '@harvard-lts/mirador-help-plugin';
 import copyrightLabel from '../plugins/copyright-label';
 
-let objectType = window.miradorOptions['objectType'];
-let objectId = window.miradorOptions['objectId'];
+const manifestId = window.miradorOptions['manifestId'];
 
 const config = {
   id: 'demo',
@@ -16,7 +15,7 @@ const config = {
   windows: [{
     imageToolsEnabled: false,
     imageToolsOpen: false,
-    manifestId: 'https://iiif.lib.harvard.edu/manifests/'+objectType+':'+objectId,
+    manifestId: manifestId,
   }],
   workspace: {
     showZoomControls: true,

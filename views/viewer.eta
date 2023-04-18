@@ -7,7 +7,7 @@
     <title>Basic Mirador</title>
     <script type="text/javascript">
         miradorOptions = {
-          manifestId: <%= it.manifestId %>
+          manifestId: '<%= it.manifestId %>'
         }
     </script>
   </head>
