@@ -40,13 +40,13 @@ router.get("/", async (req, res) => {
 
   const mpsExamples = [
     {
-      "href": "/example/mps/URN-3:FHCL:100001249?manifestVersion=2",
-      "text": "Tibetan Buddhist Resource Center",
+      "href": "/example/mps/URN-3:DIV.LIB.USC:3200357?manifestVersion=2",
+      "text": "Harvard Divinity School Unitarian Service Committee",
       "version": 2
     },
     {
-      "href": "/example/mps/URN-3:FHCL:100001249?manifestVersion=2",
-      "text": "Tibetan Buddhist Resource Center",
+      "href": "/example/mps/URN-3:DIV.LIB.USC:3200357?manifestVersion=3",
+      "text": "Harvard Divinity School Unitarian Service Committee",
       "version": 3
     },
     {
@@ -60,15 +60,15 @@ router.get("/", async (req, res) => {
       "version": 3
     },
     {
-      "href": "/example/mps/URN-3:FHCL:100252142?manifestVersion=2",
-      "text": "Harvard-Yale Baseball Game. Holmes Field, photograph, 1885",
+      "href": "/example/mps/URN-3:FHCL:100001249?manifestVersion=2",
+      "text": "Tibetan Buddhist Resource Center",
       "version": 2
     },
     {
-      "href": "/example/mps/URN-3:FHCL:100252142?manifestVersion=3",
-      "text": "Harvard-Yale Baseball Game. Holmes Field, photograph, 1885",
+      "href": "/example/mps/URN-3:FHCL:100001249?manifestVersion=2",
+      "text": "Tibetan Buddhist Resource Center",
       "version": 3
-    },
+    }
   ];
 
   res.render("index", {
