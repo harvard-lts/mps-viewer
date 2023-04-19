@@ -7,7 +7,7 @@
   "scripts": {
     "start": "node ./bin/www",
     "devstart": "nodemon ./bin/www -L",
-    "devserverstart": "DEBUG=mirador-sandbox:* npm run devstart",
+    "devserverstart": "DEBUG=mps-viewer:* npm run devstart",
     "webpack": "webpack --config webpack/webpack.config.js",
     "test": "./node_modules/.bin/jest",
     "test:watch": "./node_modules/.bin/jest --watchAll",
