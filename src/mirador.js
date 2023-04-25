@@ -1,10 +1,10 @@
 import Mirador from 'mirador/dist/es/src/index';
-import { miradorImageToolsPlugin } from 'mirador-image-tools';
-import miradorSharePlugin from 'mirador-share-plugin';
-import miradorDownloadPlugin from 'mirador-dl-plugin';
+//import { miradorImageToolsPlugin } from 'mirador-image-tools';
+//import miradorSharePlugin from 'mirador-share-plugin';
+//import miradorDownloadPlugin from 'mirador-dl-plugin';
 import harvardBranding from '../plugins/harvard_branding';
-import hideViewerNavigation from '@harvard-lts/mirador-hide-nav-plugin';
-import harvardHelp from '@harvard-lts/mirador-help-plugin';
+//import hideViewerNavigation from '@harvard-lts/mirador-hide-nav-plugin';
+//import harvardHelp from '@harvard-lts/mirador-help-plugin';
 import copyrightLabel from '../plugins/copyright-label';
 
 const manifestId = window.miradorOptions['manifestId'];
@@ -336,13 +336,13 @@ const config = {
 };
 
 const plugins = [
-  ...miradorDownloadPlugin,
-  ...miradorSharePlugin,
-  ...miradorImageToolsPlugin,
+//  ...miradorDownloadPlugin,
+//  ...miradorSharePlugin,
+//  ...miradorImageToolsPlugin,
+//  harvardBranding,
+//  harvardHelp,
   harvardBranding,
-  harvardHelp,
-  harvardBranding,
-  hideViewerNavigation,
+//  hideViewerNavigation,
   copyrightLabel,
 ]
 
