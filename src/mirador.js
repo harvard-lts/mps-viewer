@@ -31,8 +31,8 @@ const config = {
         },
         secondary: {
           main: '#F8C21C',
-          dark: 'green',
-          contrastText: 'yellow'
+          dark: '##008000',
+          contrastText: '#ffff00'
         },
         error: {
           main: '#EB001B',
@@ -168,8 +168,8 @@ const config = {
         },
         secondary: {
           main: '#A51C30',
-          dark: 'green',
-          contrastText: 'yellow'
+          dark: '#008000',
+          contrastText: '#ffff00'
         },
         error: {
           main: '#EB001B',
@@ -229,7 +229,7 @@ const config = {
         },
         MuiPaper: {
           root: {
-            color: '##1E1E1E'
+            color: '#1E1E1E'
           }
         },
         MuiTypography: {
