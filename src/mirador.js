@@ -4,6 +4,7 @@ import miradorSharePlugin from 'mirador-share-plugin';
 import miradorDownloadPlugin from 'mirador-dl-plugin';
 import harvardBranding from '../plugins/harvard_branding';
 import hideViewerNavigation from '@harvard-lts/mirador-hide-nav-plugin';
+import miradorPdiiifPlugin from '@harvard-lts/mirador-pdiiif-plugin';
 import harvardHelp from '@harvard-lts/mirador-help-plugin';
 import copyrightLabel from '../plugins/copyright-label';
 
@@ -337,6 +338,7 @@ const config = {
 
 const plugins = [
   ...miradorDownloadPlugin,
+  ...miradorPdiiifPlugin,
   ...miradorSharePlugin,
   ...miradorImageToolsPlugin,
   harvardBranding,
