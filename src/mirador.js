@@ -4,6 +4,7 @@ import Mirador from 'mirador/dist/es/src/index';
 //import miradorDownloadPlugin from 'mirador-dl-plugin';
 import harvardBranding from '../plugins/harvard_branding';
 //import hideViewerNavigation from '@harvard-lts/mirador-hide-nav-plugin';
+//import miradorPdiiifPlugin from '@harvard-lts/mirador-pdiiif-plugin';
 //import harvardHelp from '@harvard-lts/mirador-help-plugin';
 import copyrightLabel from '../plugins/copyright-label';
 
@@ -30,8 +31,8 @@ const config = {
         },
         secondary: {
           main: '#F8C21C',
-          dark: 'green',
-          contrastText: 'yellow'
+          dark: '##008000',
+          contrastText: '#ffff00'
         },
         error: {
           main: '#EB001B',
@@ -167,8 +168,8 @@ const config = {
         },
         secondary: {
           main: '#A51C30',
-          dark: 'green',
-          contrastText: 'yellow'
+          dark: '#008000',
+          contrastText: '#ffff00'
         },
         error: {
           main: '#EB001B',
@@ -228,7 +229,7 @@ const config = {
         },
         MuiPaper: {
           root: {
-            color: '##1E1E1E'
+            color: '#1E1E1E'
           }
         },
         MuiTypography: {
@@ -337,10 +338,9 @@ const config = {
 
 const plugins = [
 //  ...miradorDownloadPlugin,
+//  ...miradorPdiiifPlugin,
 //  ...miradorSharePlugin,
 //  ...miradorImageToolsPlugin,
-//  harvardBranding,
-//  harvardHelp,
   harvardBranding,
 //  hideViewerNavigation,
   copyrightLabel,
