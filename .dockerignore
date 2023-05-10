@@ -6,3 +6,5 @@ docker-compose*
 !/logs/.keep
 public/js/dist/*
 !public/js/dist/.keep
+config/*
+!config/example-items-example.txt
