@@ -106,6 +106,7 @@ dist/*
 .tern-port
 
 .idea/
+.vscode/
 .DS_Store
 
 # Configuration
