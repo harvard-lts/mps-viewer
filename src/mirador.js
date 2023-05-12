@@ -9,7 +9,6 @@ import harvardHelp from '@harvard-lts/mirador-help-plugin';
 import copyrightLabel from '../plugins/copyright-label';
 
 const manifestId = window.miradorOptions['manifestId'];
-
 const config = {
   id: 'demo',
   selectedTheme: 'light',
@@ -333,7 +332,13 @@ const config = {
         '',
       ],
     },
-  },  
+  },
+  miradorPDIIIFPlugin: {
+    // For the PDIIIF we need to pass where to access the mitm.html file for streamsaver
+    // If it's an iframe embedded elsewhere, it will need the origin from frameElement.src
+    // If it's viewed directly it will need origin from the address bar
+    mitmPath: `${new URL(window?.frameElement?.src ?? window.origin).origin}/pdiiif/mitm.html`,
+  } 
 };
 
 const plugins = [
