@@ -3,17 +3,15 @@ const router = express.Router();
 const embedCtrl = require('../controllers/embed.ctrl');
 const examplesCtrl = require('../controllers/examples.ctrl');
 const consoleLogger = require('../logger/logger.js').console;
-const exampleItems = require('../config/example-items.json');
 
 router.get("/", async (req, res) => {
 
+  let exampleItems;
   try {
-    examples = await examplesCtrl.getExamples();
+    exampleItems = await examplesCtrl.getExamples();
   } catch(e) {
     consoleLogger.error(e);
   }
-  consoleLogger.debug('EXAMPLES: '+examples);
-
 
   const idsExamples = exampleItems.idsExamples;
   const mpsExamples = exampleItems.mpsExamples;
