@@ -16,6 +16,9 @@ const config = {
     imageToolsEnabled: false,
     imageToolsOpen: false,
     manifestId: manifestId,
+    // The canvasId options should be enough to open a specific canvas
+    // If the canvasId doesn't exist, the URLSync plugin will resolve it to the first canvas
+    canvasId: new URLSearchParams(window.location.search).get('canvasId')?.toString()
   }],
   workspace: {
     showZoomControls: true,
@@ -338,7 +341,7 @@ const config = {
     // If it's an iframe embedded elsewhere, it will need the origin from frameElement.src
     // If it's viewed directly it will need origin from the address bar
     mitmPath: `${new URL(window?.frameElement?.src ?? window.origin).origin}/pdiiif/mitm.html`,
-  } 
+  },
 };
 
 const plugins = [
