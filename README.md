@@ -31,7 +31,16 @@ Docker Compose
 
 *Note: The config file .env is specifically excluded in .gitignore and .dockerignore, since it contains credentials it should NOT ever be committed to any repository.*
 
-### 3: Start
+### 3: Create example items
+
+##### Create config file for environment variables
+- Make a copy of the example items example file `./config/example-items-example.txt`
+- Rename the file to `example-items.json`
+- Replace placeholder values as necessary
+
+*Note: The config file .example-items.json is specifically excluded in .gitignore and .dockerignore, since the examples will differ from environment to environment.*
+
+### 4: Start
 
 ##### START
 
@@ -41,7 +50,7 @@ This command builds all images and runs all containers specified in the docker-c
 docker-compose -f docker-compose-local.yml up -d --build --force-recreate
 ```
 
-### 4: SSH into Container (optional)
+### 5: SSH into Container (optional)
 
 ##### Run docker exec to execute a shell in the container by name
 
@@ -51,7 +60,7 @@ Open a shell using the exec command to access the mps-viewer container.
 docker exec -it mps-viewer bash
 ```
 
-### 5: Stop
+### 6: Stop
 
 ##### STOP AND REMOVE
 

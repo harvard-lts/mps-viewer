@@ -108,3 +108,7 @@ dist/*
 .idea/
 .vscode/
 .DS_Store
+
+# Configuration
+/config/*
+!/config/example-items-example.txt
