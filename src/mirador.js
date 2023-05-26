@@ -7,6 +7,7 @@ import hideViewerNavigation from '@harvard-lts/mirador-hide-nav-plugin';
 import miradorPdiiifPlugin from '@harvard-lts/mirador-pdiiif-plugin';
 import harvardHelp from '@harvard-lts/mirador-help-plugin';
 import copyrightLabel from '../plugins/copyright-label';
+import miradorUrlSyncPlugin from '@harvard-lts/mirador-url-sync-plugin';
 
 const manifestId = window.miradorOptions['manifestId'];
 const config = {
@@ -16,6 +17,9 @@ const config = {
     imageToolsEnabled: false,
     imageToolsOpen: false,
     manifestId: manifestId,
+    // The canvasId options should be enough to open a specific canvas
+    // If the canvasId doesn't exist, the URLSync plugin will resolve it to the first canvas
+    canvasId: new URLSearchParams(window.location.search).get('canvasId')?.toString()
   }],
   workspace: {
     showZoomControls: true,
@@ -338,7 +342,7 @@ const config = {
     // If it's an iframe embedded elsewhere, it will need the origin from frameElement.src
     // If it's viewed directly it will need origin from the address bar
     mitmPath: `${new URL(window?.frameElement?.src ?? window.origin).origin}/pdiiif/mitm.html`,
-  } 
+  },
 };
 
 const plugins = [
@@ -346,6 +350,7 @@ const plugins = [
   ...miradorPdiiifPlugin,
   ...miradorSharePlugin,
   ...miradorImageToolsPlugin,
+  miradorUrlSyncPlugin,
   harvardBranding,
   harvardHelp,
   harvardBranding,
