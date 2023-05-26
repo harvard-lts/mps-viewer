@@ -7,6 +7,7 @@ import hideViewerNavigation from '@harvard-lts/mirador-hide-nav-plugin';
 import miradorPdiiifPlugin from '@harvard-lts/mirador-pdiiif-plugin';
 import harvardHelp from '@harvard-lts/mirador-help-plugin';
 import copyrightLabel from '../plugins/copyright-label';
+import miradorUrlSyncPlugin from '@harvard-lts/mirador-url-sync-plugin';
 
 const manifestId = window.miradorOptions['manifestId'];
 const config = {
@@ -349,6 +350,7 @@ const plugins = [
   ...miradorPdiiifPlugin,
   ...miradorSharePlugin,
   ...miradorImageToolsPlugin,
+  miradorUrlSyncPlugin,
   harvardBranding,
   harvardHelp,
   harvardBranding,
