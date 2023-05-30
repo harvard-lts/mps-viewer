@@ -159,7 +159,7 @@ Additionally are certain things avoid right now to make further transitions in t
 | Avoid | Reason | Prefer |
 | --- | --- | --- |
 | [NWB](https://github.com/insin/nwb) | NWB isn't actively maintained, it requires an old version of node in order to work and might have compatibility issues with React Testing Library. It seems like Mirador will be moving away from this eventually | [Parcel](https://github.com/parcel-bundler/parcel), [vite](https://github.com/vitejs/vite), [webpack](https://github.com/webpack/webpack) (community consensus TBD) |
-| [Enzyme](https://github.com/enzymejs/enzyme) | Enzyme isn't actively maintained, and doesn't support React versions newer than 16. Mirador has already begun moving away from this | React Testing Library |
+| [Enzyme](https://github.com/enzymejs/enzyme) | Enzyme isn't actively maintained, and doesn't support React versions newer than 16. Mirador has already begun moving away from this | [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/) |
 
 
 ### Suggested workflow for Mirador plugins
