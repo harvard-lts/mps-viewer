@@ -152,9 +152,9 @@ npm run test:watch
 
 ### Mirador 3, pre and post React 17
 
-Mirador support for React 17, 18 and beyond might bring about some big changes in plugin development. In particular the major version of bump of [Material UI](https://mui.com/material-ui/getting-started/overview/) in Mirador will need to trickle down into plugins. Until this release we should continue to use [legacy Material UI components](https://v4.mui.com/system/basics/).
+Mirador support for React 17, 18 and beyond might bring about some big changes in plugin development. In particular the major version of bump of [Material UI](https://mui.com/material-ui/getting-started/overview/) in Mirador will need to trickle down into plugins. Until Mirador adds that support, we should continue to use [legacy Material UI components](https://v4.mui.com/system/basics/).
 
-Additionally are certain things avoid right now to make further transitions in the future easier
+Additionally there are certain things we should avoid in our work today due to known issues/obsolecence:
 
 | Avoid | Reason | Prefer |
 | --- | --- | --- |
