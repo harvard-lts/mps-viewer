@@ -165,7 +165,7 @@ Additionally there are certain things we should avoid in our work today due to k
 ### Suggested workflow for Mirador plugins
 
 1. Make new branch in mps-viewer named corresponding to the Jira ticket
-2. Begin by shimming the plugin into MPS viewer or Mirador
+2. Begin by shimming the plugin into MPS viewer or Mirador (see below for detailed instructions)
 3. Once you're happy with the results, create an empty repo for the plugin
 4. Create a branch on the plugin repo named with the corresponding Jira ticket and migrate your plugin code here and write tests if possible (This step will ensure your code be reviewed more easily, as you'll be able to make a PR)
 5. Publish the plugin to npm on the `@harvard-lts` organization
@@ -227,16 +227,19 @@ It's a bit more straightforward to shim a plugin into MPS, the steps are somethi
 
 - [M3 Creating a Mirador plugin](https://github.com/ProjectMirador/mirador/wiki/M3---Creating-a-Mirador-plugin)
 - [Mirador 3 plugins](https://github.com/ProjectMirador/mirador/wiki/Mirador-3-plugins) (which is fuller but easier to miss)
+- [Mirador FAQ](https://github.com/ProjectMirador/mirador/wiki/M3---Mirador-3-Frequently-Asked-Questions) contains some useful code snippets
 
 Exploring the Mirador source code is another great way to get familiar with how things work!
 
 #### Unofficial docs
 
-There's a also a [WIP plugin dev tutorial](https://github.com/jbaiter/mirador3-plugin-dev-tutorial) outside of the official docs, which is maybe a little bit out of date at this point, but does go into more detail and is definitely worth reading.
+- [WIP plugin dev tutorial](https://github.com/jbaiter/mirador3-plugin-dev-tutorial) by Johannes Baiter, which is maybe a little bit out of date at this point, but does go into more detail and is definitely worth reading.
+- [Plugin authoring notes](https://gist.github.com/jabrah/690560c3edbc8f01fb7ef5f3008964db) and [adding a new view](https://gist.github.com/jabrah/97fb049cfc2b4229739233641c4a8a32) are two gists by John Abrahams that contain extra notes on what is required.
+- [Mirador awesome](https://github.com/ProjectMirador/mirador-awesome) is a list of plugins and implementations that you might find useful as a reference for how other people have done things.
 
 #### Existing harvard plugins
 
-We've created some plugins that do various things, here's some you might find useful along with what techniques each leverages:
+We've created some plugins that do various things. Here are some you might find useful along with what techniques each leverages:
 
 <table>
     <tr>
