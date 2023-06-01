@@ -17,6 +17,26 @@ Express
 ##### Development Operations
 Docker Compose
 
+## Table of Contents
+* [Local Development Environment Setup Instructions](#local-development-environment-setup-instructions)
+* [Automated tests](docs/automated-tests.md)
+    * [Unit tests](docs/automated-tests.md#unit-tests)
+    * [Creating unit tests](docs/automated-tests.md#creating-unit-tests)
+    * [Integration tests](docs/automated-tests.md#integration-tests)
+    * [All tests](docs/automated-tests.md#all-tests)
+* [Tips and tricks for developing Mirador plugins](docs/developing-mirador-plugins.md)
+    * [Mirador 3, pre and post React 17](docs/developing-mirador-plugins.md#mirador-3-pre-and-post-react-17)
+    * [Suggested workflow for Mirador plugins](docs/developing-mirador-plugins.md#suggested-workflow-for-mirador-plugins)
+    * [Local development](docs/developing-mirador-plugins.md#local-development)
+    * [Shimming into Mirador](docs/developing-mirador-plugins.md#shimming-into-mirador)
+    * [Shimming into MPS Viewer](docs/developing-mirador-plugins.md#shimming-into-mps-viewer)
+    * [Useful resources](docs/developing-mirador-plugins.md#useful-resources)
+        * [Official docs](docs/developing-mirador-plugins.md#official-docs)
+        * [Unofficial docs](docs/developing-mirador-plugins.md#unofficial-docs)
+        * [Existing harvard plugins](docs/developing-mirador-plugins.md#existing-harvard-plugins)
+        * [Extra reading](docs/developing-mirador-plugins.md#extra-reading)
+* [List of Custom Harvard Mirador Plugins](docs/custom-harvard-mirador-plugins.md)        
+
 ## Local Development Environment Setup Instructions
 
 ### 1: Clone the repository to a local directory
@@ -68,80 +88,4 @@ This command stops and removes all containers specified in the docker-compose-lo
 
 ```
 docker-compose -f docker-compose-local.yml down
-```
-
-## Automated tests
-
-The automated tests are organized by test type.
-* **Unit tests** are tests that are isolated to the component that the tests are running in and do not require any external dependencies
-* **Integration tests** are tests that require external components such as APIs or databases
-
-The package.json file has commands for running unit tests and integration tests individually.
-
-```
-  "test:unit": "./node_modules/.bin/jest --testPathPattern=__tests__/unit",
-  "test:integration": "./node_modules/.bin/jest --testPathPattern=__tests__/integration"
-```
-
-### Unit tests
-
-Unit tests test the individual component without any external dependencies on other components.
-
-Run unit tests
-
-Open a shell inside the container
-
-```
-docker exec -it node-ci-template bash
-```
-
-Run the unit tests with the `npm run test:unit` command
-
-```
-npm run test:unit
-```
-
-#### Creating unit tests
-
-Unit tests can be created to call the API routes of the component internally with jest and supertest.
-
-Review the node template [example unit tests](https://github.huit.harvard.edu/LTS/node-ci-template/blob/main/__tests__/unit/api.test.js).
-
-### Integration tests
-
-Integration tests require additional components to be running with preset data in place to return the expected test results. Build and run these components locally or update the configuration to connect to the server urls.
-
-Setup the additional components on the same docker network to run integration tests.
-
-Open a shell inside the container
-
-```
-docker exec -it node-ci-templates bash
-```
-
-Run the integration tests with the `npm run test:integration` command
-
-```
-npm run test:integration
-```
-
-### All tests
-
-The package.json file has commands for running all tests.
-
-```
-  "test": "./node_modules/.bin/jest",
-  "test:watch": "./node_modules/.bin/jest --watchAll",
-```
-
-To run all tests run the npm test command.
-
-```
-npm test
-```
-
-To run all tests in watchAll mode run the npm test command.
-
-```
-npm run test:watch
 ```
