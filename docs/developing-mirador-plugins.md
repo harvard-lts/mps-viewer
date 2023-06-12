@@ -16,11 +16,12 @@ Additionally there are certain things we should avoid in our work today due to k
 
 1. Make new branch in mps-viewer named corresponding to the Jira ticket
 2. Begin by shimming the plugin into MPS viewer or Mirador (see below for detailed instructions)
-3. Once you're happy with the results, create an empty repo for the plugin
+3. Once you're happy with the results, create an empty repo for the plugin (the general convention is `mirador-<name>-plugin`)
 4. Create a branch on the plugin repo named with the corresponding Jira ticket and migrate your plugin code here and write tests if possible (This step will ensure your code be reviewed more easily, as you'll be able to make a PR)
 5. Publish the plugin to npm on the `@harvard-lts` organization
 6. Update MPS Viewer to install and include the npm module proper
 7. Create two PR's, one for mps-viewer, the other for the plugin. Have testing instructions in one of these PR's and have them reference each other
+8. Add the plugin to the list of [Custom Harvard Mirador Plugins](./custom-harvard-mirador-plugins.md)
 
 
 ## Local development
