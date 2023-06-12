@@ -66,7 +66,7 @@ Shimming a plugin into Mirador will allow you to have full access to React and R
 
 It's a bit more straightforward to shim a plugin into MPS, the steps are something like:
 
-1. Create a new folder in the plugins directory and add your plugin code here
+1. Create a new folder in the `plugins` directory and add your plugin code here
 2. Import your plugin to `src/mirador.js` and include it in the plugins array
 
 
