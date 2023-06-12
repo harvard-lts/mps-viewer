@@ -4,7 +4,7 @@
 
 Mirador support for React 17, 18 and beyond might bring about some big changes in plugin development. In particular the major version of bump of [Material UI](https://mui.com/material-ui/getting-started/overview/) in Mirador will need to trickle down into plugins. Until Mirador adds that support, we should continue to use [legacy Material UI components](https://v4.mui.com/system/basics/).
 
-Additionally there are certain things we should avoid in our work today due to known issues/obsolecence:
+Additionally there are certain things we should avoid in our work today due to known issues/obsolescence:
 
 | Avoid | Reason | Prefer |
 | --- | --- | --- |
@@ -34,7 +34,7 @@ Shimming a plugin into Mirador will allow you to have full access to React and R
 
 1. [Checkout Mirador](https://github.com/ProjectMirador/mirador)
 2. Place your plugin in the `plugins` directory
-3. Edit `__tests/integration/mirador/index.html` to have whatever config you like (e.g. pointing it at an MPS manifest). Also edit it to pass an empty array (`[]`) after the config. E.g. `Mirador.viewer({...}, [])`
+3. Edit `__tests__/integration/mirador/index.html` to have whatever config you like (e.g. pointing it at an MPS manifest). Also edit it to pass an empty array (`[]`) after the config. E.g. `Mirador.viewer({...}, [])`
 4. Edit `src/init.js`, importing your plugin at the top, and setting the plugins to an array containing your plugin. E.g:
    ```
    import MiradorViewer from './lib/MiradorViewer';
