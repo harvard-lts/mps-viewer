@@ -4,7 +4,7 @@
 
 Mirador support for React 17, 18 and beyond might bring about some big changes in plugin development. In particular the major version of bump of [Material UI](https://mui.com/material-ui/getting-started/overview/) in Mirador will need to trickle down into plugins. Until Mirador adds that support, we should continue to use [legacy Material UI components](https://v4.mui.com/system/basics/).
 
-Additionally there are certain things we should avoid in our work today due to known issues/obsolecence:
+Additionally there are certain things we should avoid in our work today due to known issues/obsolescence:
 
 | Avoid | Reason | Prefer |
 | --- | --- | --- |
@@ -16,11 +16,12 @@ Additionally there are certain things we should avoid in our work today due to k
 
 1. Make new branch in mps-viewer named corresponding to the Jira ticket
 2. Begin by shimming the plugin into MPS viewer or Mirador (see below for detailed instructions)
-3. Once you're happy with the results, create an empty repo for the plugin
+3. Once you're happy with the results, create an empty repo for the plugin (the general convention is `mirador-<name>-plugin`)
 4. Create a branch on the plugin repo named with the corresponding Jira ticket and migrate your plugin code here and write tests if possible (This step will ensure your code be reviewed more easily, as you'll be able to make a PR)
 5. Publish the plugin to npm on the `@harvard-lts` organization
 6. Update MPS Viewer to install and include the npm module proper
 7. Create two PR's, one for mps-viewer, the other for the plugin. Have testing instructions in one of these PR's and have them reference each other
+8. Add the plugin to the list of [Custom Harvard Mirador Plugins](./custom-harvard-mirador-plugins.md)
 
 
 ## Local development
@@ -34,7 +35,7 @@ Shimming a plugin into Mirador will allow you to have full access to React and R
 
 1. [Checkout Mirador](https://github.com/ProjectMirador/mirador)
 2. Place your plugin in the `plugins` directory
-3. Edit `__tests/integration/mirador/index.html` to have whatever config you like (e.g. pointing it at an MPS manifest). Also edit it to pass an empty array (`[]`) after the config. E.g. `Mirador.viewer({...}, [])`
+3. Edit `__tests__/integration/mirador/index.html` to have whatever config you like (e.g. pointing it at an MPS manifest). Also edit it to pass an empty array (`[]`) after the config. E.g. `Mirador.viewer({...}, [])`
 4. Edit `src/init.js`, importing your plugin at the top, and setting the plugins to an array containing your plugin. E.g:
    ```
    import MiradorViewer from './lib/MiradorViewer';
@@ -66,7 +67,7 @@ Shimming a plugin into Mirador will allow you to have full access to React and R
 
 It's a bit more straightforward to shim a plugin into MPS, the steps are something like:
 
-1. Create a new folder in the plugins directory and add your plugin code here
+1. Create a new folder in the `plugins` directory and add your plugin code here
 2. Import your plugin to `src/mirador.js` and include it in the plugins array
 
 

@@ -7,14 +7,14 @@ After following the setup instructions and starting your Docker container, you s
 * A Health Check page here: https://localhost:23017/healthcheck
 
 ## Technology Stack
-##### Language
+### Language
 NodeJS
 Mirador
 
-##### Framework
+### Framework
 Express
 
-##### Development Operations
+### Development Operations
 Docker Compose
 
 ## Table of Contents
@@ -44,7 +44,7 @@ Docker Compose
 
 ### 2: Create app config
 
-##### Create config file for environment variables
+#### Create config file for environment variables
 - Make a copy of the config example file `./env-example.txt`
 - Rename the file to `.env`
 - Replace placeholder values as necessary
@@ -53,7 +53,7 @@ Docker Compose
 
 ### 3: Create example items
 
-##### Create config file for environment variables
+#### Create config file for environment variables
 - Make a copy of the example items example file `./config/example-items-example.txt`
 - Rename the file to `example-items.json`
 - Replace placeholder values as necessary
@@ -62,7 +62,7 @@ Docker Compose
 
 ### 4: Start
 
-##### START
+#### START
 
 This command builds all images and runs all containers specified in the docker-compose-local.yml configuration.
 
@@ -72,7 +72,7 @@ docker-compose -f docker-compose-local.yml up -d --build --force-recreate
 
 ### 5: SSH into Container (optional)
 
-##### Run docker exec to execute a shell in the container by name
+#### Run docker exec to execute a shell in the container by name
 
 Open a shell using the exec command to access the mps-viewer container.
 
@@ -82,7 +82,7 @@ docker exec -it mps-viewer bash
 
 ### 6: Stop
 
-##### STOP AND REMOVE
+#### STOP AND REMOVE
 
 This command stops and removes all containers specified in the docker-compose-local.yml configuration. This command can be used in place of the 'stop' and 'rm' commands.
 
