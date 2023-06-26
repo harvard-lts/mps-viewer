@@ -71,6 +71,31 @@ It's a bit more straightforward to shim a plugin into MPS, the steps are somethi
 2. Import your plugin to `src/mirador.js` and include it in the plugins array
 
 
+
+## Trouble shooting
+
+Some problem scenarios that have been observed before along with possible solutions:
+
+<table>
+    <thead>
+        <tr>
+            <th>Problem</th>
+            <th>Possible solutions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Shimming the plug-in works, but including it via `node_modules` throws an error. Parcel appears to produce a bundle which doesn't include one or more of the imports correctly</td>
+            <td>
+                <ul>
+                    <li>Make sure that all the dependencies are installed (if any new were added).</li>
+                    <li>Try running `npm update parcel`</li>
+                </ul>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
 ## Useful resources
 
 
@@ -130,7 +155,6 @@ We've created some plugins that do various things. Here are some you might find 
         </td>            
     </tr>    
 </table>
-
 
 ### Extra reading
 
