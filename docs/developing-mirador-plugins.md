@@ -88,8 +88,8 @@ Some problem scenarios that have been observed before along with possible soluti
             <td>Shimming the plug-in works, but including it via `node_modules` throws an error. Parcel appears to produce a bundle which doesn't include one or more of the imports correctly</td>
             <td>
                 <ul>
-                    <li>Make sure that all the dependencies are installed (if any new were added).</li>
-                    <li>Try running `npm update parcel`</li>
+                    <li>Make sure that all the dependencies are installed (using `npm install` if any new were added) in the plugin repo.</li>
+                    <li>Try running `npm update parcel` in the plugin repo</li>
                 </ul>
             </td>
         </tr>
