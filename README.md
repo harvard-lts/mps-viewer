@@ -30,6 +30,7 @@ Docker Compose
     * [Local development](docs/developing-mirador-plugins.md#local-development)
     * [Shimming into Mirador](docs/developing-mirador-plugins.md#shimming-into-mirador)
     * [Shimming into MPS Viewer](docs/developing-mirador-plugins.md#shimming-into-mps-viewer)
+    * [Troubleshooting](docs/developing-mirador-plugins.md#troubleshooting)
     * [Useful resources](docs/developing-mirador-plugins.md#useful-resources)
         * [Official docs](docs/developing-mirador-plugins.md#official-docs)
         * [Unofficial docs](docs/developing-mirador-plugins.md#unofficial-docs)
