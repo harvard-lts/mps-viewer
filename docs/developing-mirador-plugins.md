@@ -72,7 +72,7 @@ It's a bit more straightforward to shim a plugin into MPS, the steps are somethi
 
 
 
-## Trouble shooting
+## Troubleshooting
 
 Some problem scenarios that have been observed before along with possible solutions:
 
