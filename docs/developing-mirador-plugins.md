@@ -8,28 +8,34 @@ Additionally there are certain things we should avoid in our work today due to k
 
 | Avoid | Reason | Prefer |
 | --- | --- | --- |
-| [NWB](https://github.com/insin/nwb) | NWB isn't actively maintained, it requires an old version of node in order to work and might have compatibility issues with React Testing Library. It seems like Mirador will be moving away from this eventually | [Parcel](https://github.com/parcel-bundler/parcel), [vite](https://github.com/vitejs/vite), [webpack](https://github.com/webpack/webpack) (community consensus TBD) |
+| [NWB](https://github.com/insin/nwb) | NWB isn't actively maintained, it requires an old version of node in order to work and might have compatibility issues with React Testing Library. It seems like Mirador will be moving away from this eventually | ~[Parcel](https://github.com/parcel-bundler/parcel)~, [vite](https://github.com/vitejs/vite), [Webpack](https://github.com/webpack/webpack) (community consensus TBD) |
 | [Enzyme](https://github.com/enzymejs/enzyme) | Enzyme isn't actively maintained, and doesn't support React versions newer than 16. Mirador has already begun moving away from this | [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/) |
+| [Parcel](https://github.com/parcel-bundler/parcel) | Occassionally seemed to create errors during the course of development and made progress more difficult | [Webpack](https://github.com/webpack/webpack) and [Rollup](https://rollupjs.org) |
 
 
 ## Suggested workflow for Mirador plugins
 
-1. Make new branch in mps-viewer named corresponding to the Jira ticket
-2. Begin by shimming the plugin into MPS viewer or Mirador (see below for detailed instructions)
-3. Once you're happy with the results, create an empty repo for the plugin (the general convention is `mirador-<name>-plugin`)
-4. Create a branch on the plugin repo named with the corresponding Jira ticket and migrate your plugin code here and write tests if possible (This step will ensure your code be reviewed more easily, as you'll be able to make a PR)
-5. Publish the plugin to npm on the `@harvard-lts` organization
-6. Update MPS Viewer to install and include the npm module proper
-7. Create two PR's, one for mps-viewer, the other for the plugin. Have testing instructions in one of these PR's and have them reference each other
-8. Add the plugin to the list of [Custom Harvard Mirador Plugins](./custom-harvard-mirador-plugins.md)
-
+1. Create a repository for the plugin
+2. Create a feature branch named corresponding to the Jira ticket
+3. Follow the the [PDIIIF plugin as an example](https://github.com/harvard-lts/mirador-pdiiif-plugin). You should be able to take its `package.json` file and swap its metadata (`name`, `description`, `version`, `repository`, and `dependencies`) for your own
+4. Make sure you have an `src/index.js`, which exports your plugin as an array in the default export
+5. Work on your code locally using the [recommended local development strategy](#run-the-plugin-using-webpack-dev-server-recommended)
+6. When your code is ready for review, follow the standard procedure for code reviews and PR's 
+7. See the section on publishing to NPM
+8. Create a PR for mps-viewer which updates the package.json to include your plugin at the correct version number (make sure to run `npm i` in the container to update the `package-lock.json`, too).
+9. Add the plugin to the list of [Custom Harvard Mirador Plugins](./custom-harvard-mirador-plugins.md)
 
 ## Local development
 
 Working in Docker comes with the unfortunate drawback that using `npm link` to substitute a dependency for a local one doesn't really work as well. There may be better ways to do this, but in the meantime here's some suggestions for developing and debugging your code locally.
 
+### Run the plugin using Webpack dev-server (recommended)
 
-### Shimming into Mirador
+This solution will allow you to develop the plugin against a stock version of Mirador. It grants you full access to the React and Redux dev tools, and will auto-compile and reload the browser window when the `src` files are updated.
+
+If your plugin is using the [suggested workflow](#suggested-workflow-for-mirador-plugins), then you can run the dev server by running `npm run serve`.
+
+### Shimming into Mirador (not recommmended)
 
 Shimming a plugin into Mirador will allow you to have full access to React and Redux devtools and can help to debug your code. The process looks something like this:
 
@@ -63,7 +69,7 @@ Shimming a plugin into Mirador will allow you to have full access to React and R
 5. Run `npm run start` to get the local dev server running
 
 
-### Shimming into MPS Viewer
+### Shimming into MPS Viewer (not recommended)
 
 It's a bit more straightforward to shim a plugin into MPS, the steps are something like:
 
@@ -90,6 +96,7 @@ Some problem scenarios that have been observed before along with possible soluti
                 <ul>
                     <li>Make sure that all the dependencies are installed (using `npm install` if any new were added) in the plugin repo.</li>
                     <li>Try running `npm update parcel` in the plugin repo</li>
+                    <li>Switch to using Rollup and Webpack, following the [PDIIIF plugin as a guide](https://github.com/harvard-lts/mirador-pdiiif-plugin)</li>
                 </ul>
             </td>
         </tr>
@@ -149,7 +156,7 @@ We've created some plugins that do various things. Here are some you might find 
         <td><a href="https://github.com/harvard-lts/mirador-pdiiif-plugin">PDIIIF plugin</a></td>
         <td>
             <ul>
-                <li>Shows tooling without NWB (Parcel, for now)</li>
+                <li>Shows tooling without NWB, using Rollup + Webpack</li>
                 <li>Shows tests written using React Testing Library</li>
             </ul>
         </td>            
