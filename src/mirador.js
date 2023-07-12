@@ -343,6 +343,7 @@ const config = {
     // If it's an iframe embedded elsewhere, it will need the origin from frameElement.src
     // If it's viewed directly it will need origin from the address bar
     mitmPath: `${new URL(window?.frameElement?.src ?? window.origin).origin}/pdiiif/mitm.html`,
+    coverPageEndpoint: process.env.PDIIIF_COVERPAGE_ENDPOINT,
   },
   miradorAnalyticsPlugin: {
     containerId:'GTM-WSHSDQ5',

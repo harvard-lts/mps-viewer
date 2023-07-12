@@ -1,7 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-
+const Dotenv = require('dotenv-webpack');
 
 module.exports = {
   mode: 'development',
@@ -30,6 +30,7 @@ module.exports = {
     new webpack.IgnorePlugin({
       resourceRegExp: /@blueprintjs\/(core|icons)/, // ignore optional UI framework dependencies
     }),
+    new Dotenv(),
   ],
   /*optimization: {
     minimize: false
