@@ -8,6 +8,7 @@ import miradorPdiiifPlugin from '@harvard-lts/mirador-pdiiif-plugin';
 import harvardHelp from '@harvard-lts/mirador-help-plugin';
 import copyrightLabel from '../plugins/copyright-label';
 import miradorUrlSyncPlugin from '@harvard-lts/mirador-url-sync-plugin';
+import miradorAnalyticsPlugin from '@harvard-lts/mirador-analytics-plugin';
 
 const manifestId = window.miradorOptions['manifestId'];
 const config = {
@@ -343,6 +344,9 @@ const config = {
     // If it's viewed directly it will need origin from the address bar
     mitmPath: `${new URL(window?.frameElement?.src ?? window.origin).origin}/pdiiif/mitm.html`,
   },
+  miradorAnalyticsPlugin: {
+    containerId:'GTM-WSHSDQ5',
+  },
 };
 
 const plugins = [
@@ -350,6 +354,7 @@ const plugins = [
   ...miradorPdiiifPlugin,
   ...miradorSharePlugin,
   ...miradorImageToolsPlugin,
+  ...miradorAnalyticsPlugin,
   miradorUrlSyncPlugin,
   harvardBranding,
   harvardHelp,
