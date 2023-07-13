@@ -1,4 +1,4 @@
-# MPS Viewer trial
+# MPS Viewer
 The viewer microservice for Multimedia Presentation Service (MPS)
 
 After following the setup instructions and starting your Docker container, you should have a running NodeJS application with two routes:
