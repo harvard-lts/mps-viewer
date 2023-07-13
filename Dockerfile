@@ -36,6 +36,6 @@ RUN chmod 754 /home/${APP_ID_NAME}/bin/webpack.sh
 
 USER ${APP_ID_NAME}
 
-ENTRYPOINT ["bin/webpack.sh"]
+#ENTRYPOINT ["bin/webpack.sh"]
 
 CMD [ "npm", "start" ]
