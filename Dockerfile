@@ -30,8 +30,12 @@ RUN echo 'umask 002' >> /home/${APP_ID_NAME}/.profile && \
 WORKDIR /home/${APP_ID_NAME}
 COPY . /home/${APP_ID_NAME}
 
-RUN npm install && npm run webpack
+RUN npm install
+
+RUN chmod 754 /home/${APP_ID_NAME}/bin/webpack.sh
 
 USER ${APP_ID_NAME}
+
+ENTRYPOINT ["bin/webpack.sh"]
 
 CMD [ "npm", "start" ]
