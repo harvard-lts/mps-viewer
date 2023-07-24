@@ -13,6 +13,7 @@ import miradorAnalyticsPlugin from '@harvard-lts/mirador-analytics-plugin';
 const viewerLocationArray = window.location.href.split('/viewer');
 const viewerLocation = viewerLocationArray[0];
 const manifestId = window.miradorOptions['manifestId'];
+const title = window.title;
 const config = {
   id: 'demo',
   selectedTheme: 'light',
@@ -329,6 +330,7 @@ const config = {
     embedOption: {
       enabled: true,
       embedIframeAttributes: "frameborder='0' marginwidth='0' marginheight='0' scrolling='no' allowfullscreen",
+      embedIframeTitle: title,
       syncIframeDimensions: {
         height: { param: 'maxheight' },
       },

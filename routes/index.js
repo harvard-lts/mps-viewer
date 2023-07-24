@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const embedCtrl = require('../controllers/embed.ctrl');
 const examplesCtrl = require('../controllers/examples.ctrl');
+const manifestsCtrl = require('../controllers/manifests.ctrl');
 const consoleLogger = require('../logger/logger.js').console;
 
 router.get("/", async (req, res) => {
@@ -70,8 +71,33 @@ router.get("/example/:manifestType/:uniqueIdentifier", async (req, res) => {
 });
 
 router.get("/viewer", async (req, res) => {
+
+  let title = '';
+  
+  try {
+    manifestResponse = await manifestsCtrl.getManifest(req.query.manifestId);
+    manifestData = manifestResponse.data || {};
+    consoleLogger.debug(manifestData);
+
+    title = manifestData.id || ''; 
+    if (manifestData.hasOwnProperty('label')) {
+      if (manifestData.label.hasOwnProperty('none')) {
+        title = manifestData.label.none[0] || '';
+      } 
+      else {
+        title = manifestData.label || '';
+      }
+    }
+    consoleLogger.debug('title: '+title);
+
+  } catch(e) {
+    consoleLogger.error(e);
+    result.error = e;
+    return res.status(500).json(result);
+  }
+
   res.render("viewer", {
-    title: "Mirador Viewer",
+    title: title,
     manifestId: req.query.manifestId
   });
 });
