@@ -10,7 +10,7 @@ import copyrightLabel from '../plugins/copyright-label';
 import miradorUrlSyncPlugin from '@harvard-lts/mirador-url-sync-plugin';
 import miradorAnalyticsPlugin from '@harvard-lts/mirador-analytics-plugin';
 
-const viewerLocationArray = window.location.href.split('/viewer');
+const viewerLocationArray = window.location.href.split('/viewer/');
 const viewerLocation = viewerLocationArray[0];
 const manifestId = window.miradorOptions['manifestId'];
 const title = window.title;
