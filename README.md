@@ -36,7 +36,8 @@ Docker Compose
         * [Unofficial docs](docs/developing-mirador-plugins.md#unofficial-docs)
         * [Existing harvard plugins](docs/developing-mirador-plugins.md#existing-harvard-plugins)
         * [Extra reading](docs/developing-mirador-plugins.md#extra-reading)
-* [List of Custom Harvard Mirador Plugins](docs/custom-harvard-mirador-plugins.md)        
+* [List of Custom Harvard Mirador Plugins](docs/custom-harvard-mirador-plugins.md)  
+* [List of Community Mirador Plugins used by MPS Viewer](docs/community-mirador-plugins.md)        
 
 ## Local Development Environment Setup Instructions
 
