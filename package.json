@@ -1,6 +1,6 @@
 {
   "name": "mps-viewer",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "The viewer microservice for Multimedia Presentation Service (MPS).",
   "author": "Phil Plencner <philip_plencner@harvard.edu>",
   "main": "app.js",
