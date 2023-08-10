@@ -90,7 +90,7 @@ Publishing to NPM is handled by a Github Actions workflow. In order to use the w
 
 ### Publishing via Github
 
-Draft a new release in the Github UI and create a tag for the version number that you'd like to publish to NPM. Do this for the `main` branch (after the feature has been merged). When the action completes the version published to NPM will match the tag used when creating the release.  
+Draft a new release in the Github UI and create a tag for the version number that you'd like to publish to NPM (there should not be a "v" in the tag name). Do this for the `main` branch (after the feature has been merged). When the action completes the version published to NPM will match the tag used when creating the release.  
 
 In the unlikely event the action fails, you'll probably want to delete the release and the tag (in that order), debug the errors and then try again.
 
