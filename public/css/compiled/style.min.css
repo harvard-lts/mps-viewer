@@ -28,7 +28,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 /* HEADER */
 .hl__header-child__title {
-    background-image: linear-gradient(-46deg, #52757e 0%, #335C67 100%);
+    background-image: linear-gradient(-46deg, #006ba9 0%,#1d4873 100%);
     color: white;
     flex: auto;
     font-family: 'Lora', Georgia, Times New Roman, serif;

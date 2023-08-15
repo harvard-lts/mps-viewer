@@ -29,18 +29,23 @@ router.get("/example/:manifestType/:uniqueIdentifier", async (req, res) => {
     let title = '';
     let iiifManifest = '';
     let errorMsg = '';
+    let introMsg = 'Welcome to the Harvard Library Viewer\'s beta release. ';
+    let infoLink = {label: 'More Information.', url: '#'}
     // Unique identifier will be a urn (mps) or record identifier (legacy)
     const uniqueIdentifier = req.params.uniqueIdentifier;
     // Manifest type will be either 'mps' or 'legacy'
     const manifestType = req.params.manifestType || 'mps';
     // Manifest version will be 2 or 3
     const manifestVersion = req.query.manifestVersion || '3';
+    // Height and Width of Viewer
+    const height = '';
+    const width = '100%';
 
     consoleLogger.debug("/example/:manifestType/:uniqueIdentifier");
-    consoleLogger.debug(`uniqueIdentifier ${uniqueIdentifier} manifestType ${manifestType} manifestVersion ${manifestVersion}`);
+    consoleLogger.debug(`uniqueIdentifier ${uniqueIdentifier} manifestType ${manifestType} manifestVersion ${manifestVersion} height ${height} width ${width}`);
 
     try {
-      embed = await embedCtrl.getEmbed(uniqueIdentifier, manifestType, manifestVersion);
+      embed = await embedCtrl.getEmbed(uniqueIdentifier, manifestType, manifestVersion, height, width);
     } catch(e) {
       consoleLogger.error(e);
     }
@@ -66,6 +71,8 @@ router.get("/example/:manifestType/:uniqueIdentifier", async (req, res) => {
       title: title,
       viewerURL: viewerURL,
       iiifManifest: iiifManifest,
+      introMsg: introMsg,
+      infoLink: infoLink,
       error: errorMsg,
     });
 });
