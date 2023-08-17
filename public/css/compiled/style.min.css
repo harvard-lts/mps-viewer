@@ -28,7 +28,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 /* HEADER */
 .hl__header-child__title {
-    background-image: linear-gradient(-46deg, #006ba9 0%,#1d4873 100%);
+    background-image: linear-gradient(-46deg,#0579b8 0%,#2a5280 100%);
     color: white;
     flex: auto;
     font-family: 'Lora', Georgia, Times New Roman, serif;
@@ -119,17 +119,43 @@ h1, h2, h3, h4, h5, h6 {
         text-align: left;
    }
 }
-/* time stamp */
-.hl__time-stamp {
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-    color: #1e1e1e;
-}
+
+/* Additional spacing */
 .row {
     margin-bottom: 50px;
 }
-
 .hl__footer .row {
     margin-bottom: 0
+}
+
+/* MODAL */
+.modal-header h5 {
+    font-size: 22px;
+}
+.modal-header button.close {
+    border-radius: 50%;
+    padding: 0.5em;
+    width: 29px;
+    height: 29px;
+    display: inline-block;
+    background: #6c6c6c;
+    position: relative;
+    transition: all 0.4s ease;
+    opacity: 1;
+  }
+.modal-header button.close span {
+    color: transparent;
+    position: absolute;
+    top: -1px;
+    font-size: 36px;
+    right: 5px;
+    line-height: 29px;
+    font-weight: normal;
+}
+.modal-header button.close:hover,
+.modal-header button.close:focus {
+    background: #eb001b;
+}
+.modal-body {
+    font-family: 'Trueno', Arial, Helvetica, sans-serif;
 }

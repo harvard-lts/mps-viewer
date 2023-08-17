@@ -1,55 +1,12 @@
 <% layout('./template') %>
 
 <div id="main-container" class="container-fluid">
-    <div class="row m-0">
-        <div class="col-md-12">
-            <% if (it.introMsg) { %>
-            <p class="text-center">
-                <%~ it.introMsg %>
-                <% if (it.infoLink) { %>
-                    <a href="<%~ it.infoLink.url %>" data-bs-toggle="modal" data-bs-target="#infoModal"><%~ it.infoLink.label %></a>
-                <% } %>
-            </p>
-            <% } %>
-            <% if (it.error) { %>
-            <p>
-                <b>Error Message:</b> <%~ it.error %>
-            </p>
-            <% } %>
-        </div>
-    </div>
-    <% if (it.viewerURL) { %>
-    <div class="row">
-        <div class="col-md-12">
-            <%~ it.viewerURL %>
-        </div>
-    </div>
-    <% } %>
-</div>
-
-<!-- The Modal -->
-<div class="modal" id="infoModal">
-  <div class="modal-dialog modal-dialog-centered modal-lg">
-    <div class="modal-content">
-
-      <!-- Modal Header -->
-      <div class="modal-header">
-        <h5 class="text-secondary">BETA Viewer</h5>
-        <button type="button" class="btn btn-lrg p-1 text-dark border border-dark rounded-lg close" data-bs-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-
-      <!-- Modal body -->
-      <div class="modal-body">
-        This pre-release, open-beta site demonstrates new functionality and features currently in development. The beta will be updated as new features are ready and issues are fixed.  This is not the final version of the site, please see the <a href="https://ask.library.harvard.edu/faq/392399">known issues list</a>.
-      </div>
-
-      <!-- Modal footer -->
-      <div class="modal-footer">
-        <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Close</button>
-      </div>
-
+  <%~ includeFile("./intro-message") %>
+  <% if (it.viewerURL) { %>
+  <div class="row">
+    <div class="col-md-12">
+      <%~ it.viewerURL %>
     </div>
   </div>
+  <% } %>
 </div>

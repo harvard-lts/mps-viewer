@@ -1,0 +1,34 @@
+<div class="row m-0">
+  <div class="col-md-12">
+    <p class="lead text-center">
+      Welcome to the Harvard Library Viewer's beta release. <a href="#" data-bs-toggle="modal" data-bs-target="#infoModal">More Information<span class="sr-only"> about the beta release</span>.</a>
+    </p>
+  </div>
+</div>
+
+<div class="modal fade" id="infoModal">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h5 class="text-secondary">BETA Viewer</h5>
+        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body text-secondary">
+        This pre-release, open-beta site demonstrates new Viewer functionality and features currently in development. The beta will be updated as new features are ready and issues are fixed. To learn more about what features are available now and how to use them, visit <a href="https://ask.library.harvard.edu/faq/392399">Using the new Viewer (Mirador)</a>.
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-sm btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
