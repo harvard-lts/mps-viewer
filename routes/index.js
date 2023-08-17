@@ -24,6 +24,47 @@ router.get("/", async (req, res) => {
   });
 });
 
+router.get("/example/manifest/", async (req, res) => {
+  let viewerURL = '';
+  let title = '';
+  let iiifManifest = '';
+  let errorMsg = '';
+  
+  const uniqueIdentifier = req.query.manifestId;
+  const manifestType = 'manifest';
+  const manifestVersion = '3';
+  
+  try {
+    embed = await embedCtrl.getEmbed(uniqueIdentifier, manifestType, manifestVersion);
+  } catch(e) {
+    consoleLogger.error(e);
+  }
+
+  if (embed) {
+    if (embed.hasOwnProperty('error')) {
+      errorMsg = embed.error;
+    }
+    if (embed.data) {
+      if (embed.data.hasOwnProperty('html')) {
+        viewerURL = embed.data.html;
+      }
+      if (embed.data.hasOwnProperty('title')) { 
+        title = embed.data.title;
+      }
+      if (embed.data.hasOwnProperty('iiif_manifest')) {
+        iiifManifest = embed.data.iiif_manifest;
+      }
+    }
+  }
+
+  res.render("example", {
+    title: title,
+    viewerURL: viewerURL,
+    iiifManifest: iiifManifest,
+    error: errorMsg,
+  });
+}); 
+
 router.get("/example/:manifestType/:uniqueIdentifier", async (req, res) => {
     let viewerURL = '';
     let title = '';

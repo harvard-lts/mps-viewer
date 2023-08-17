@@ -13,6 +13,18 @@ embedCtrl.getEmbed = async (uniqueIdentifier, manifestType = 'mps', manifestVers
     embedUrl += `/api/mps?urn=${uniqueIdentifier}&manifestVersion=${manifestVersion}&height=${height}&width=${width}`;
   }
 
+  switch(manifestType) {
+    case 'legacy':
+      embedUrl += `/api/legacy?recordIdentifier=${uniqueIdentifier}`
+      break;
+    case 'mps':
+      embedUrl += `/api/mps?urn=${uniqueIdentifier}&manifestVersion=${manifestVersion}`;
+      break;
+    case 'manifest':
+      embedUrl += `/api/manifest?manifestId=${uniqueIdentifier}&manifestVersion=${manifestVersion}`;
+  }
+
+
   consoleLogger.info('embedUrl');
   consoleLogger.info(embedUrl);
 
