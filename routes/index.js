@@ -33,9 +33,11 @@ router.get("/example/manifest/", async (req, res) => {
   const uniqueIdentifier = req.query.manifestId;
   const manifestType = 'manifest';
   const manifestVersion = '3';
-  
+  // Height and Width of Viewer
+  const height = '';
+  const width = '100%';
   try {
-    embed = await embedCtrl.getEmbed(uniqueIdentifier, manifestType, manifestVersion);
+    embed = await embedCtrl.getEmbed(uniqueIdentifier, manifestType, manifestVersion, height, width);
   } catch(e) {
     consoleLogger.error(e);
   }
