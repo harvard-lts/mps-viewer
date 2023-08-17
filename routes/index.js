@@ -18,7 +18,7 @@ router.get("/", async (req, res) => {
   const mpsExamples = exampleItems.mpsExamples;
 
   res.render("index", {
-    title: "Welcome to the MPS Viewer!",
+    title: "",
     idsExamples: idsExamples,
     mpsExamples: mpsExamples
   });
@@ -35,12 +35,15 @@ router.get("/example/:manifestType/:uniqueIdentifier", async (req, res) => {
     const manifestType = req.params.manifestType || 'mps';
     // Manifest version will be 2 or 3
     const manifestVersion = req.query.manifestVersion || '3';
+    // Height and Width of Viewer
+    const height = '';
+    const width = '100%';
 
     consoleLogger.debug("/example/:manifestType/:uniqueIdentifier");
-    consoleLogger.debug(`uniqueIdentifier ${uniqueIdentifier} manifestType ${manifestType} manifestVersion ${manifestVersion}`);
+    consoleLogger.debug(`uniqueIdentifier ${uniqueIdentifier} manifestType ${manifestType} manifestVersion ${manifestVersion} height ${height} width ${width}`);
 
     try {
-      embed = await embedCtrl.getEmbed(uniqueIdentifier, manifestType, manifestVersion);
+      embed = await embedCtrl.getEmbed(uniqueIdentifier, manifestType, manifestVersion, height, width);
     } catch(e) {
       consoleLogger.error(e);
     }

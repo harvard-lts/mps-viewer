@@ -1,26 +1,12 @@
 <% layout('./template') %>
 
-<div id="main-container" class="container">
-    <div class="row">
-        <div class="col-md-12">
-            <h2><%= it.title %></h2>
-            <% if (it.iiifManifest) { %>
-            <p>
-                <b>IIIF Manifest:</b> <a href="<%= it.iiifManifest %>" target="_blank"><%= it.iiifManifest %></a>
-            </p>
-            <% } %>
-            <% if (it.error) { %>
-            <p>
-                <b>Error Message:</b> <%~ it.error %>
-            </p>
-            <% } %>
-        </div>
+<div id="main-container" class="container-fluid">
+  <%~ includeFile("./intro-message") %>
+  <% if (it.viewerURL) { %>
+  <div class="row">
+    <div class="col-md-12">
+      <%~ it.viewerURL %>
     </div>
-    <% if (it.viewerURL) { %>
-    <div class="row">
-        <div class="col-md-12">
-            <%~ it.viewerURL %>
-        </div>
-    </div>
-    <% } %>
+  </div>
+  <% } %>
 </div>

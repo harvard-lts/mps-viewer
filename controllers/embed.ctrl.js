@@ -3,14 +3,14 @@ const consoleLogger = require('../logger/logger.js').console;
 
 const embedCtrl = {};
 
-embedCtrl.getEmbed = async (uniqueIdentifier, manifestType = 'mps', manifestVersion = '3') => {
+embedCtrl.getEmbed = async (uniqueIdentifier, manifestType = 'mps', manifestVersion = '3', height = 700, width = 1200) => {
 
   let embedUrl = process.env.EMBED_BASE_URL;
 
   if (manifestType === 'legacy') {
-    embedUrl += `/api/legacy?recordIdentifier=${uniqueIdentifier}`
+    embedUrl += `/api/legacy?recordIdentifier=${uniqueIdentifier}&height=${height}&width=${width}`
   } else {
-    embedUrl += `/api/mps?urn=${uniqueIdentifier}&manifestVersion=${manifestVersion}`;
+    embedUrl += `/api/mps?urn=${uniqueIdentifier}&manifestVersion=${manifestVersion}&height=${height}&width=${width}`;
   }
 
   consoleLogger.info('embedUrl');
