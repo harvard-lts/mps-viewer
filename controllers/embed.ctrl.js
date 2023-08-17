@@ -8,10 +8,22 @@ embedCtrl.getEmbed = async (uniqueIdentifier, manifestType = 'mps', manifestVers
   let embedUrl = process.env.EMBED_BASE_URL;
 
   if (manifestType === 'legacy') {
-    embedUrl += `/api/legacy?recordIdentifier=${uniqueIdentifier}`
+    
   } else {
-    embedUrl += `/api/mps?urn=${uniqueIdentifier}&manifestVersion=${manifestVersion}`;
+    
   }
+
+  switch(manifestType) {
+    case 'legacy':
+      embedUrl += `/api/legacy?recordIdentifier=${uniqueIdentifier}`
+      break;
+    case 'mps':
+      embedUrl += `/api/mps?urn=${uniqueIdentifier}&manifestVersion=${manifestVersion}`;
+      break;
+    case 'manifest':
+      embedUrl += `/api/manifest?manifestId=${uniqueIdentifier}&manifestVersion=${manifestVersion}`;
+  }
+
 
   consoleLogger.info('embedUrl');
   consoleLogger.info(embedUrl);
