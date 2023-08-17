@@ -3,7 +3,7 @@
     <a href="#content" accesskey="S" onclick="$('#content').focus();" class="sr-only sr-only-focusable visually-hidden-focusable">Skip to Main Content</a>
   </div>
   <h1 class="hl__header-child__title ">
-    <a href="/" title="MPS Viewer"><span>MPS</span> Viewer</a>
+    <a href="/" title="Beta Viewer"><span>Beta</span> Viewer</a>
   </h1>
   <div class="hl__header-child__logo">
     <div class="hl__linked-image">
