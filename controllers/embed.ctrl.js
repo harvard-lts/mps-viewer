@@ -3,7 +3,7 @@ const consoleLogger = require('../logger/logger.js').console;
 
 const embedCtrl = {};
 
-embedCtrl.getEmbed = async (uniqueIdentifier, manifestType = 'mps', manifestVersion = '3', height = 700, width = 1200) => {
+embedCtrl.getEmbed = async (uniqueIdentifier, manifestType = 'mps', manifestVersion = '3', height = 700, width = 1200, productionOverride = '') => {
 
   let embedUrl = process.env.EMBED_BASE_URL;
 
@@ -12,7 +12,7 @@ embedCtrl.getEmbed = async (uniqueIdentifier, manifestType = 'mps', manifestVers
       embedUrl += `/api/legacy?recordIdentifier=${uniqueIdentifier}&height=${height}&width=${width}`
       break;
     case 'mps':
-      embedUrl += `/api/mps?urn=${uniqueIdentifier}&manifestVersion=${manifestVersion}&height=${height}&width=${width}`;
+      embedUrl += `/api/mps?urn=${uniqueIdentifier}&manifestVersion=${manifestVersion}&height=${height}&width=${width}&prod=${productionOverride}`;
       break;
     case 'manifest':
       embedUrl += `/api/manifest?manifestId=${uniqueIdentifier}&manifestVersion=${manifestVersion}&height=${height}&width=${width}`;

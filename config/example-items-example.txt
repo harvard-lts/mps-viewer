@@ -1,22 +1,38 @@
 {
 	"idsExamples": [{
-			"href": "/example/legacy/W401849_URN-3:HUL.ARCH:2009749",
-			"text": "Harvard University Baseball Team, photograph, 1892"
+			"version2": "/example/legacy/W401849_URN-3:HUL.ARCH:2009749",
+			"version3": "",
+			"title": "Harvard University Baseball Team, photograph, 1892",
+			"owner": "Harvard University Archives",
+			"type": "single image",
+			"size": "small (1507 x 1167px)"
 		},
 		{
-			"href": "/example/legacy/W401827_URN-3:HUL.ARCH:2009747",
-			"text": "Harvard-Yale Baseball Game. Holmes Field, photograph, 1885"
+			"version2": "/example/legacy/W401827_URN-3:HUL.ARCH:2009747",
+			"version3": "",
+			"title": "Harvard-Yale Baseball Game. Holmes Field, photograph, 1885",
+			"owner": "Harvard University Archives",
+			"type": "single image",
+			"size": "small (1663 x 1204px)"
 		},
 	],
 	"mpsExamples": [{
-			"href": "/example/mps/URN-3:DIV.LIB.USC:3200357?manifestVersion=2",
-			"text": "Harvard Divinity School Unitarian Service Committee",
-			"version": 2
+			"version2": "/example/mps/URN-3:HUL.GUEST:409464?manifestVersion=2",
+			"version3": "/example/mps/URN-3:HUL.GUEST:409464?manifestVersion=3",
+			"title": "Mosquito brigades and how to organize them.",
+			"owner": "Test item (no owner)",
+			"type": "page-turned object",
+			"size": "transcripted, 133 pages",
+			"environment": "QA"
 		},
 		{
-			"href": "/example/mps/URN-3:DIV.LIB.USC:3200357?manifestVersion=3",
-			"text": "Harvard Divinity School Unitarian Service Committee",
-			"version": 3
+			"version2": "/example/mps/urn-3:DIV.LIB:42551491?manifestVersion=2&prod=1",
+			"version3": "/example/mps/urn-3:DIV.LIB:42551491?manifestVersion=3&prod=1",
+			"title": "Unitarian Service Committee. Case Files, 1938-1951.",
+			"owner": "Harvard Divinity School",
+			"type": "page-turned object",
+			"size": "3 pages",
+			"environment": "PROD"
 		},
 	]
 }
