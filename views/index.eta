@@ -1,25 +1,56 @@
 <% layout('./template') %>
 
+<% var badgeClasses = "" %>
+
 <div id="main-container" class="container">
   <%~ includeFile("./intro-message") %>
-  <div class="row mt-4">
-    <h3>IDS/PDS Examples (legacy)</h3>
-    <div class="col-md-12">
-      <div class="list-group">
-      <% it.idsExamples.forEach(function(idsExample){ %>
-        <a href="<%= idsExample.href %>" class="list-group-item list-group-item-action"><%= idsExample.text %></a>
-      <% }) %>
-      </div>
-    </div>
-  </div>
   <div class="row">
     <h3>MPS Examples</h3>
     <div class="col-md-12">
       <div class="list-group">
         <% it.mpsExamples.forEach(function(mpsExample){ %>
-          <a href="<%= mpsExample.href %>" class="list-group-item list-group-item-action"><%= mpsExample.text %> - version <%= mpsExample.version %></a> 
+          <% if (mpsExample.environment == "PROD") { 
+            badgeClasses = "bg-success text-white"
+          } else {
+            badgeClasses = "bg-warning text-dark"
+          } %>
+          <div class="list-group-item list-group-item-action">
+          <p class="b-0 m-0"><strong><%= mpsExample.title %></strong><br />
+            <%= mpsExample.owner %>, <%= mpsExample.type %>, <%= mpsExample.size %> <span class="badge rounded-pill <%= badgeClasses %>"><%= mpsExample.environment %></span>
+          </p>
+          <ul class="b-0 m-0">
+            <% if (mpsExample.version2) { %>
+              <li><a href="<%= mpsExample.version2 %>" class="font-weight-light">Version 2</a></li>
+            <% } %>
+            <% if (mpsExample.version3) { %>
+              <li><a href="<%= mpsExample.version3 %>" class="font-weight-light">Version 3</a></li>
+            <% } %>
+          </ul>
+        </div>
         <% }) %>
       </div>
     </div>
   </div>
+  <div class="row mt-4">
+    <h3>IDS/PDS Examples (legacy)</h3>
+    <div class="col-md-12">
+      <div class="list-group">
+      <% it.idsExamples.forEach(function(idsExample){ %>
+        <div class="list-group-item list-group-item-action">
+          <p class="b-0 m-0"><strong><%= idsExample.title %></strong><br />
+            <%= idsExample.owner %>, <%= idsExample.type %>, <%= idsExample.size %>
+          </p>
+          <ul class="b-0 m-0">
+            <% if (idsExample.version2) { %>
+              <li><a href="<%= idsExample.version2 %>" class="font-weight-light">Version 2</a></li>
+            <% } %>
+            <% if (idsExample.version3) { %>
+              <li><a href="<%= idsExample.version3 %>" class="font-weight-light">Version 3</a></li>
+            <% } %>
+          </ul>
+        </div>
+      <% }) %>
+      </div>
+    </div>
+  </div>  
 </div>

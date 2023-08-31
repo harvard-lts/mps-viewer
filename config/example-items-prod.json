@@ -1,0 +1,123 @@
+{
+	"idsExamples": [{
+			"version2": "/example/legacy/W401849_URN-3:HUL.ARCH:2009749",
+			"version3": "",
+			"title": "Harvard University Baseball Team, photograph, 1892",
+			"owner": "Harvard University Archives",
+			"type": "single image",
+			"size": "small (1507 x 1167px)"
+		},
+		{
+			"version2": "/example/legacy/W401827_URN-3:HUL.ARCH:2009747",
+			"version3": "",
+			"title": "Harvard-Yale Baseball Game. Holmes Field, photograph, 1885",
+			"owner": "Harvard University Archives",
+			"type": "single image",
+			"size": "small (1663 x 1204px)"
+		},
+		{
+			"version2": "/example/legacy/W587091_URN-3:RAD.SCHL:11680642",
+			"version3": "",
+			"title": "To roast a chicken; show #217",
+			"owner": "Schlesinger Library on the History of Women in America",
+			"type": "single image",
+			"size": "x-small (563 x 568px)"
+		},
+		{
+			"version2": "/example/legacy/HUAM140429_URN-3:HUAM:INV012574P_DYNMC",
+			"version3": "",
+			"title": "Untitled Drumset",
+			"owner": "Harvard Art Museums",
+			"type": "single image",
+			"size": "small (1024 x 819px)"
+		},
+		{
+			"version2": "/example/legacy/990100671200203941",
+			"version3": "",
+			"title": "Hot Dog In The Manger",
+			"owner": "Harvard Art Museums",
+			"type": "page-turned object",
+			"size": "3 pages"
+		},
+		{
+			"version2": "/example/legacy/990095204340203941",
+			"version3": "",
+			"title": "Chronique du monde depuis la création, et des rois de France et d'Angleterre, jusqu'à l'an 1461: manuscript, [ca. 1461]. MS Typ 41. Houghton Library, Harvard University, Cambridge, Mass.",
+			"owner": "Houghton Library",
+			"type": "page-turned object",
+			"size": "41 pages"
+		},
+		{
+			"version2": "/example/legacy/990098789400203941",
+			"version3": "",
+			"title": "Heures de Nôtre Dame (use of Troyes and Sens) : manuscript, [ca. 1470]",
+			"owner": "Houghton Library",
+			"type": "page-turned object",
+			"size": "480 pages"
+		}
+	],
+	"mpsExamples": [{
+			"version2": "/example/mps/urn-3:DIV.LIB:42551491?manifestVersion=2",
+			"version3": "/example/mps/urn-3:DIV.LIB:42551491?manifestVersion=3",
+			"title": "Unitarian Service Committee. Case Files, 1938-1951.",
+			"owner": "Harvard Divinity School",
+			"type": "page-turned object",
+			"size": "4 pages",
+			"environment": "PROD"
+		},
+		{
+			"version2": "/example/mps/URN-3:FHCL:42632611?manifestVersion=2",
+			"version3": "/example/mps/URN-3:FHCL:42632611?manifestVersion=3",
+			"title": "Fushun Xian zhi 37 juan. cc China] Tongzhi 11 [1872] 1872.",
+			"owner": "Harvard Yenching Library",
+			"type": "page-turned object",
+			"size": "116 pages",
+			"environment": "PROD"
+		},
+		{
+			"version2": "/example/mps/URN-3:FHCL:100001249?manifestVersion=2",
+			"version3": "/example/mps/URN-3:FHCL:100001249?manifestVersion=3",
+			"title": "Tibetan Buddhist Resource Center.",
+			"owner": "Harvard Yenching Library",
+			"type": "page-turned object",
+			"size": "650 pages",
+			"environment": "PROD"
+		},
+		{
+			"version2": "/example/mps/urn-3:FHCL.JUD:40308070?manifestVersion=2",
+			"version3": "/example/mps/urn-3:FHCL.JUD:40308070?manifestVersion=3",
+			"title": "Agor, Ya'akov, Israeli. Muze'on ha-ketav in Acre, Israel. 1960 - 1970.",
+			"owner": "Judaica Division, Widener Library",
+			"type": "single image",
+			"size": "small (1510 x 2052px)",
+			"environment": "PROD"
+		},
+		{
+			"version2": "/example/mps/urn-3:KSG.LIBR:40505153?manifestVersion=2",
+			"version3": "/example/mps/urn-3:KSG.LIBR:40505153?manifestVersion=3",
+			"title": "Krivokhizha, V. I. (VasiliÄ­ Iosifovich), 1947- Russia's national security policy, conceptions and realities.",
+			"owner": "Kennedy School Library",
+			"type": "single image",
+			"size": "transcripted, medium (2568 x 3288px)",
+			"environment": "PROD"
+		},
+		{
+			"version2": "/example/mps/urn-3:FHCL.HOUGH:41301981?manifestVersion=2",
+			"version3": "/example/mps/urn-3:FHCL.HOUGH:41301981?manifestVersion=3",
+			"title": "Thomas Prince journal, 1710-1751. MS Am 3039.",
+			"owner": "Houghton Library",
+			"type": "single image",
+			"size": "large (4175 x 4816px)",
+			"environment": "PROD"
+		},
+		{
+			"version2": "/example/mps/urn-3:DOAK.RESLIB:40977022?manifestVersion=2",
+			"version3": "/example/mps/urn-3:DOAK.RESLIB:40977022?manifestVersion=3",
+			"title": "Nativity. Church of Panagia tou Arakos, nave, west bay, south side, vault, wall paintings, Lagoudera, Cyprus, 1192.",
+			"owner": "Dumbarton Oaks Research Library",
+			"type": "single image",
+			"size": "x-large (9698 x 7782px)",
+			"environment": "PROD"
+		}
+	]
+}

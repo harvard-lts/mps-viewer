@@ -78,15 +78,17 @@ router.get("/example/:manifestType/:uniqueIdentifier", async (req, res) => {
     const manifestType = req.params.manifestType || 'mps';
     // Manifest version will be 2 or 3
     const manifestVersion = req.query.manifestVersion || '3';
+    // Used to override to use Production MPS to get the Manifest
+    const productionOverride = req.query.prod || '';    
     // Height and Width of Viewer
     const height = '';
     const width = '100%';
 
     consoleLogger.debug("/example/:manifestType/:uniqueIdentifier");
-    consoleLogger.debug(`uniqueIdentifier ${uniqueIdentifier} manifestType ${manifestType} manifestVersion ${manifestVersion} height ${height} width ${width}`);
+    consoleLogger.debug(`uniqueIdentifier ${uniqueIdentifier} manifestType ${manifestType} manifestVersion ${manifestVersion} height ${height} width ${width} productionOverride ${productionOverride}`);
 
     try {
-      embed = await embedCtrl.getEmbed(uniqueIdentifier, manifestType, manifestVersion, height, width);
+      embed = await embedCtrl.getEmbed(uniqueIdentifier, manifestType, manifestVersion, height, width, productionOverride);
     } catch(e) {
       consoleLogger.error(e);
     }

@@ -159,3 +159,16 @@ h1, h2, h3, h4, h5, h6 {
 .modal-body {
     font-family: 'Trueno', Arial, Helvetica, sans-serif;
 }
+
+.list-group-item a {
+    font-family: 'Lora', Georgia, Times New Roman, serif;
+    
+}
+
+.list-group a {
+    border-bottom: none;
+}
+
+.list-group a:hover {
+    border-bottom: 3px solid #ADD3E6;
+}
