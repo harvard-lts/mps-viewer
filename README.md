@@ -58,7 +58,7 @@ Docker Compose
 #### Create config file for environment variables
 - Make a copy of the example items example file `./config/example-items-example.txt`
 - Rename the file to `example-items.json`
-- Replace placeholder values as necessary
+- Replace placeholder values from one of the environment-specific json files included in the `/config/` folder.
 
 *Note: The config file .example-items.json is specifically excluded in .gitignore and .dockerignore, since the examples will differ from environment to environment.*
 
