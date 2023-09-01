@@ -93,30 +93,39 @@
 			"environment": "DEV"
 		},
 		{
-			"version2": "/example/mps/urn-3:DIV.LIB:42551491?manifestVersion=2&prod=1",
-			"version3": "/example/mps/urn-3:DIV.LIB:42551491?manifestVersion=3&prod=1",
-			"title": "Unitarian Service Committee. Case Files, 1938-1951.",
+			"version2": "/example/mps/URN-3:DIV.LIB:29999858?manifestVersion=2&prod=1",
+			"version3": "/example/mps/URN-3:DIV.LIB:29999858?manifestVersion=3&prod=1",
+			"title": "Foote, Henry Wilder, 1875-1964. Papers of Professor Henry Wilder Foote and Family, 1714-1959.",
 			"owner": "Harvard Divinity School",
 			"type": "page-turned object",
-			"size": "4 pages",
+			"size": "3 pages",
 			"environment": "PROD"
 		},
 		{
-			"version2": "/example/mps/URN-3:FHCL:42632611?manifestVersion=2&prod=1",
-			"version3": "/example/mps/URN-3:FHCL:42632611?manifestVersion=3&prod=1",
-			"title": "Fushun Xian zhi 37 juan. cc China] Tongzhi 11 [1872] 1872.",
-			"owner": "Harvard Yenching Library",
+			"version2": "/example/mps/URN-3:HLS.LIBR:102621314?manifestVersion=2&prod=1",
+			"version3": "/example/mps/URN-3:HLS.LIBR:102621314?manifestVersion=3&prod=1",
+			"title": "Cecil F. Poole Papers, 1939-1997. Speeches.",
+			"owner": "Harvard Law School Library, Historical & Special Collections",
 			"type": "page-turned object",
-			"size": "116 pages",
+			"size": "transcripted, 121 pages",
 			"environment": "PROD"
 		},
 		{
-			"version2": "/example/mps/URN-3:FHCL:100001249?manifestVersion=2&prod=1",
-			"version3": "/example/mps/URN-3:FHCL:100001249?manifestVersion=3&prod=1",
-			"title": "Tibetan Buddhist Resource Center.",
-			"owner": "Harvard Yenching Library",
+			"version2": "/example/mps/URN-3:GSE.LIBR:42470991?manifestVersion=2&prod=1",
+			"version3": "/example/mps/URN-3:GSE.LIBR:42470991?manifestVersion=3&prod=1",
+			"title": "Richards, I. A. (Ivor Armstrong) 1893-1979. Spansk gennem billeder. no 1975.",
+			"owner": "Gutman Library",
 			"type": "page-turned object",
-			"size": "650 pages",
+			"size": "spanish, transcripted, 468 pages",
+			"environment": "PROD"
+		},
+		{
+			"version2": "/example/mps/URN-3:RAD.SCHL:101557499?manifestVersion=2&prod=1",
+			"version3": "/example/mps/URN-3:RAD.SCHL:101557499?manifestVersion=3&prod=1",
+			"title": "National Organization for Women Newsletter Collection. New York. Nassau County chapter. Nassau NOW Times. Pr-1.",
+			"owner": "Radcliffe Institute",
+			"type": "page-turned object",
+			"size": "partially transcripted, 725 pages",
 			"environment": "PROD"
 		},
 		{
