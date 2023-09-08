@@ -59,6 +59,7 @@
 	"mpsExamples": [{
 			"version2": "/example/mps/URN-3:HUL.GUEST:409464?manifestVersion=2",
 			"version3": "/example/mps/URN-3:HUL.GUEST:409464?manifestVersion=3",
+			"nrs": "/example/nrs/URN-3:HUL.GUEST:409464",
 			"title": "Mosquito brigades and how to organize them.",
 			"owner": "Test item (no owner)",
 			"type": "page-turned object",
@@ -68,6 +69,7 @@
 		{
 			"version2": "/example/mps/URN-3:HUL.OIS:100102314?manifestVersion=2",
 			"version3": "/example/mps/URN-3:HUL.OIS:100102314?manifestVersion=3",
+			"nrs": "/example/nrs/URN-3:HUL.OIS:100102314",
 			"title": "Da Qing jin shen quan shu (Tongzhi jiu nian geng wu xia ji) cc Jingdu Rong lu tang Tongzhi 9 [1870].",
 			"owner": "Test item (no owner)",
 			"type": "page-turned object",
@@ -77,6 +79,7 @@
 		{
 			"version2": "/example/mps/URN-3:GSE.LIBR:100041477?manifestVersion=2",
 			"version3": "/example/mps/URN-3:GSE.LIBR:100041477?manifestVersion=3",
+			"nrs": "/example/nrs/URN-3:GSE.LIBR:100041477",
 			"title": "North Carolina teachers record. Raleigh, N.C. North Carolina Teachers Association. Volume 37. No. 3. May 1967. ",
 			"owner": "Wilson Library, University of North Carolina Chapel Hill, Black Teacher Archive",
 			"type": "page-turned object",
@@ -86,6 +89,7 @@
 		{
 			"version2": "/example/mps/URN-3:GSE.LIBR:100037458?manifestVersion=2",
 			"version3": "/example/mps/URN-3:GSE.LIBR:100037458?manifestVersion=3",
+			"nrs": "/example/nrs/URN-3:GSE.LIBR:100037458",
 			"title": "North Carolina teachers record. Raleigh, N.C. North Carolina Teachers Association. Volume 23. No. 2. Mar. 1952.",
 			"owner": "Wilson Library, University of North Carolina Chapel Hill, Black Teacher Archive",
 			"type": "page-turned object",
@@ -95,6 +99,7 @@
 		{
 			"version2": "/example/mps/URN-3:DIV.LIB:29999858?manifestVersion=2&prod=1",
 			"version3": "/example/mps/URN-3:DIV.LIB:29999858?manifestVersion=3&prod=1",
+			"nrs": "/example/nrs/URN-3:DIV.LIB:29999858?prod=1",
 			"title": "Foote, Henry Wilder, 1875-1964. Papers of Professor Henry Wilder Foote and Family, 1714-1959.",
 			"owner": "Harvard Divinity School",
 			"type": "page-turned object",
@@ -104,6 +109,7 @@
 		{
 			"version2": "/example/mps/URN-3:HLS.LIBR:102621314?manifestVersion=2&prod=1",
 			"version3": "/example/mps/URN-3:HLS.LIBR:102621314?manifestVersion=3&prod=1",
+			"nrs": "/example/nrs/URN-3:HLS.LIBR:102621314?prod=1",
 			"title": "Cecil F. Poole Papers, 1939-1997. Speeches.",
 			"owner": "Harvard Law School Library, Historical & Special Collections",
 			"type": "page-turned object",
@@ -113,6 +119,7 @@
 		{
 			"version2": "/example/mps/URN-3:GSE.LIBR:42470991?manifestVersion=2&prod=1",
 			"version3": "/example/mps/URN-3:GSE.LIBR:42470991?manifestVersion=3&prod=1",
+			"nrs": "/example/nrs/URN-3:GSE.LIBR:42470991?prod=1",
 			"title": "Richards, I. A. (Ivor Armstrong) 1893-1979. Spansk gennem billeder. no 1975.",
 			"owner": "Gutman Library",
 			"type": "page-turned object",
@@ -122,6 +129,7 @@
 		{
 			"version2": "/example/mps/URN-3:RAD.SCHL:101557499?manifestVersion=2&prod=1",
 			"version3": "/example/mps/URN-3:RAD.SCHL:101557499?manifestVersion=3&prod=1",
+			"nrs": "/example/nrs/URN-3:RAD.SCHL:101557499?prod=1",
 			"title": "National Organization for Women Newsletter Collection. New York. Nassau County chapter. Nassau NOW Times. Pr-1.",
 			"owner": "Radcliffe Institute",
 			"type": "page-turned object",
@@ -131,6 +139,7 @@
 		{
 			"version2": "/example/mps/urn-3:FHCL.JUD:40308070?manifestVersion=2&prod=1",
 			"version3": "/example/mps/urn-3:FHCL.JUD:40308070?manifestVersion=3&prod=1",
+			"nrs": "/example/nrs/URN-3:FHCL.JUD:40308070?prod=1",
 			"title": "Agor, Ya'akov, Israeli. Muze'on ha-ketav in Acre, Israel. 1960 - 1970.",
 			"owner": "Judaica Division, Widener Library",
 			"type": "single image",
@@ -140,6 +149,7 @@
 		{
 			"version2": "/example/mps/urn-3:KSG.LIBR:40505153?manifestVersion=2&prod=1",
 			"version3": "/example/mps/urn-3:KSG.LIBR:40505153?manifestVersion=3&prod=1",
+			"nrs": "/example/nrs/URN-3:KSG.LIBR:40505153?prod=1",
 			"title": "Krivokhizha, V. I. (VasiliÄ­ Iosifovich), 1947- Russia's national security policy, conceptions and realities.",
 			"owner": "Kennedy School Library",
 			"type": "single image",
@@ -149,6 +159,7 @@
 		{
 			"version2": "/example/mps/urn-3:FHCL.HOUGH:41301981?manifestVersion=2&prod=1",
 			"version3": "/example/mps/urn-3:FHCL.HOUGH:41301981?manifestVersion=3&prod=1",
+			"nrs": "/example/nrs/URN-3:FHCL.HOUGH:41301981?prod=1",
 			"title": "Thomas Prince journal, 1710-1751. MS Am 3039.",
 			"owner": "Houghton Library",
 			"type": "single image",
@@ -158,6 +169,7 @@
 		{
 			"version2": "/example/mps/urn-3:DOAK.RESLIB:40977022?manifestVersion=2&prod=1",
 			"version3": "/example/mps/urn-3:DOAK.RESLIB:40977022?manifestVersion=3&prod=1",
+			"nrs": "/example/nrs/URN-3:DOAK.RESLIB:40977022?prod=1",
 			"title": "Nativity. Church of Panagia tou Arakos, nave, west bay, south side, vault, wall paintings, Lagoudera, Cyprus, 1192.",
 			"owner": "Dumbarton Oaks Research Library",
 			"type": "single image",

@@ -14,6 +14,9 @@ embedCtrl.getEmbed = async (uniqueIdentifier, manifestType = 'mps', manifestVers
     case 'mps':
       embedUrl += `/api/mps?urn=${uniqueIdentifier}&manifestVersion=${manifestVersion}&height=${height}&width=${width}&prod=${productionOverride}`;
       break;
+    case 'nrs':
+      embedUrl += `/api/nrs?urn=${uniqueIdentifier}&manifestVersion=${manifestVersion}&height=${height}&width=${width}&prod=${productionOverride}`;
+      break;      
     case 'manifest':
       embedUrl += `/api/manifest?manifestId=${uniqueIdentifier}&manifestVersion=${manifestVersion}&height=${height}&width=${width}`;
   }
