@@ -343,7 +343,7 @@ const config = {
       enabled: true,
       manifestIdReplacePattern: [
         /.*/,
-        manifestId,
+        viewerLocation+'/viewer/?manifestId='+manifestId,
       ],
     },
   },
