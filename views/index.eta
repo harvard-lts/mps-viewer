@@ -25,6 +25,9 @@
             <% if (mpsExample.version3) { %>
               <li><a href="<%= mpsExample.version3 %>" class="font-weight-light">Version 3</a></li>
             <% } %>
+            <% if (mpsExample.nrs) { %>
+              <li><a href="<%= mpsExample.nrs %>" class="font-weight-light">NRS</a></li>
+            <% } %>            
           </ul>
         </div>
         <% }) %>
@@ -46,6 +49,9 @@
             <% } %>
             <% if (idsExample.version3) { %>
               <li><a href="<%= idsExample.version3 %>" class="font-weight-light">Version 3</a></li>
+            <% } %>
+            <% if (idsExample.nrs) { %>
+              <li><a href="<%= idsExample.nrs %>" class="font-weight-light">NRS</a></li>
             <% } %>
           </ul>
         </div>
