@@ -2,13 +2,12 @@ import Mirador from 'mirador/dist/es/src/index';
 import { miradorImageToolsPlugin } from 'mirador-image-tools';
 import miradorSharePlugin from 'mirador-share-plugin';
 import miradorDownloadPlugin from 'mirador-dl-plugin';
-import harvardBranding from '../plugins/harvard_branding';
 import hideViewerNavigation from '@harvard-lts/mirador-hide-nav-plugin';
 import miradorPdiiifPlugin from '@harvard-lts/mirador-pdiiif-plugin';
 import harvardHelp from '@harvard-lts/mirador-help-plugin';
-import copyrightLabel from '../plugins/copyright-label';
 import miradorUrlSyncPlugin from '@harvard-lts/mirador-url-sync-plugin';
 import miradorAnalyticsPlugin from '@harvard-lts/mirador-analytics-plugin';
+import miradorHarvardCustomPlugin from "@harvard-lts/mirador-harvard-custom-plugin";
 
 const viewerLocationArray = window.location.href.split('/viewer/');
 const viewerLocation = viewerLocationArray[0];
@@ -366,11 +365,9 @@ const plugins = [
   ...miradorImageToolsPlugin,
   ...miradorAnalyticsPlugin,
   miradorUrlSyncPlugin,
-  harvardBranding,
   harvardHelp,
-  harvardBranding,
   hideViewerNavigation,
-  copyrightLabel,
+  miradorHarvardCustomPlugin,
 ]
 
 Mirador.viewer(config, plugins);
