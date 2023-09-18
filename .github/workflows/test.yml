@@ -16,7 +16,7 @@ jobs:
         run: npm run webpack
       - name: Run tests
         env: 
-          EMBED_BASE_URL: https://embed-qa.lib.harvard.edu
+          EMBED_BASE_URL: https://embed.lib.harvard.edu
           REJECT_UNAUTHORIZED_CERT: false
         run: npm run test
       - run: echo "This job's status is ${{ job.status }}."  
