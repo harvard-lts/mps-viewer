@@ -1,4 +1,5 @@
 const embedCtrl = require('../../controllers/embed.ctrl');
+const httpCtrl = require('../../controllers/http.ctrl');
 const consoleLogger = require('../../logger/logger.js').console;
 
 beforeAll( async () => {
@@ -59,4 +60,17 @@ describe('Embed', () => {
     expect(embed).not.toBeNull();
   });
    
+  test('Unsuccessful response from makeRequest MPS', async () => {
+    const urn = '12345';
+    let data;
+    try {
+      data = await httpCtrl.makeRequest(urn, 'mps', 3);
+    } catch (e) {
+      const errorMsg = `Unable to validate makeRequest: ${e}`;
+      consoleLogger.error(errorMsg);
+    }
+
+    expect(data).not.toBeNull();
+  });
+
 });
