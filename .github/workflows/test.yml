@@ -14,6 +14,13 @@ jobs:
         run: npm install
       - name: Run webpack
         run: npm run webpack
+      - name: create-json
+        id: create-json
+        uses: jsdaniell/create-json@v1.2.2
+        with:
+            name: "example-items.json"
+            dir: 'config/'
+            json: '{"idsExamples":[{"version2":"/example/legacy/W401849_URN-3:HUL.ARCH:2009749","version3":"","title":"Harvard University Baseball Team, photograph, 1892","owner":"Harvard University Archives","type":"single image","size":"small (1507 x 1167px)"}],"mpsExamples":[{"version2":"/example/mps/URN-3:DIV.LIB:29999858?manifestVersion=2&prod=1","version3":"/example/mps/URN-3:DIV.LIB:29999858?manifestVersion=3&prod=1","nrs":"/example/nrs/URN-3:DIV.LIB:29999858?prod=1","title":"Foote, Henry Wilder, 1875-1964. Papers of Professor Henry Wilder Foote and Family, 1714-1959.","owner":"Harvard Divinity School","type":"page-turned object","size":"3 pages","environment":"PROD"}]}'  
       - name: Run tests
         env: 
           EMBED_BASE_URL: https://embed.lib.harvard.edu
