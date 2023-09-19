@@ -29,6 +29,7 @@ router.get("/example/manifest/", async (req, res) => {
   let title = '';
   let iiifManifest = '';
   let errorMsg = '';
+  let embed = {};
   
   const uniqueIdentifier = req.query.manifestId;
   const manifestType = 'manifest';
@@ -40,6 +41,7 @@ router.get("/example/manifest/", async (req, res) => {
     embed = await embedCtrl.getEmbed(uniqueIdentifier, manifestType, manifestVersion, height, width);
   } catch(e) {
     consoleLogger.error(e);
+    throw new Error(e);
   }
 
   if (embed) {
