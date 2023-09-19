@@ -5,6 +5,7 @@ const consoleLogger = require('../../logger/logger.js').console;
 
 beforeAll( async () => {
   console.log('Running embed tests.');
+  let stub = sinon.stub(httpCtrl, 'makeRequest').returns({"data":[{"title":"Harvard University Baseball Team, photograph, 1892","iiifManifest":"https://iiif.lib.harvard.edu/manifests/ids:10274486","html":"<iframe src='https://localhost:23017/viewer/?manifestId=https%3A%2F%2Fiiif.lib.harvard.edu%2Fmanifests%2Fids%3A10274486' height='700px' width='1200px' title='[Harvard University Baseball Team, photograph, 1892]' frameborder='0' marginwidth='0' marginheight='0' scrolling='no' allowfullscreen></iframe>"}]});
 });
 
 describe('Embed', () => {
@@ -12,7 +13,6 @@ describe('Embed', () => {
   test('Successful response from getEmbed Legacy', async () => {
     const recordIdentifier = 'HUAM140429_URN-3:HUAM:INV012574P_DYNMC';
     let embed;
-    let stub = sinon.stub(httpCtrl, 'makeRequest').returns({"data":[{"title":"Harvard University Baseball Team, photograph, 1892","iiifManifest":"https://iiif.lib.harvard.edu/manifests/ids:10274486","html":"<iframe src='https://localhost:23017/viewer/?manifestId=https%3A%2F%2Fiiif.lib.harvard.edu%2Fmanifests%2Fids%3A10274486' height='700px' width='1200px' title='[Harvard University Baseball Team, photograph, 1892]' frameborder='0' marginwidth='0' marginheight='0' scrolling='no' allowfullscreen></iframe>"}]});
     try {
       embed = await embedCtrl.getEmbed(recordIdentifier, 'legacy', 2);
     } catch (e) {
