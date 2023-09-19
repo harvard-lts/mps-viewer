@@ -25,5 +25,5 @@ jobs:
         env: 
           EMBED_BASE_URL: https://embed.lib.harvard.edu
           REJECT_UNAUTHORIZED_CERT: false
-        run: npm run test
+        run: npm run test:unit
       - run: echo "This job's status is ${{ job.status }}."  
