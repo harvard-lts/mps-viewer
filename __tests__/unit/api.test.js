@@ -12,6 +12,8 @@ describe('API routes', () => {
   let testsAgent = supertest.agent(app);
 
   it('Should return healthcheck', (done) => {
+    console.log('Running healthcheck test');
+    console.log('EMBASEURL: ' + process.env.EMBED_BASE_URL);
     testsAgent
       .get('/healthcheck')
       .set('Content-Type', 'application/json')
