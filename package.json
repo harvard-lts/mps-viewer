@@ -19,7 +19,7 @@
   "dependencies": {
     "@harvard-lts/mirador-analytics-plugin": "^0.3.0",
     "@harvard-lts/mirador-harvard-custom-plugin": "^1.0.0",
-    "@harvard-lts/mirador-help-plugin": "^1.1.0",
+    "@harvard-lts/mirador-help-plugin": "^1.2.0",
     "@harvard-lts/mirador-hide-nav-plugin": "^1.0.1",
     "@harvard-lts/mirador-pdiiif-plugin": "^0.1.28",
     "@harvard-lts/mirador-url-sync-plugin": "^0.1.2",
