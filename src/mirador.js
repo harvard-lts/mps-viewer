@@ -325,7 +325,7 @@ const config = {
     }
   },
   miradorSharePlugin: {
-    dragAndDropInfoLink: 'https://iiif.io',
+    iiifInfoLink: 'https://iiif.io',
     embedOption: {
       enabled: true,
       embedIframeAttributes: "frameborder='0' marginwidth='0' marginheight='0' scrolling='no' allowfullscreen",
@@ -342,7 +342,7 @@ const config = {
       enabled: true,
       manifestIdReplacePattern: [
         /.*/,
-        manifestId,
+        viewerLocation+'/viewer/?manifestId='+manifestId,
       ],
     },
   },
