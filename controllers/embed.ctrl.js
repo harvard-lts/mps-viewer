@@ -3,7 +3,7 @@ const consoleLogger = require('../logger/logger.js').console;
 
 const embedCtrl = {};
 
-embedCtrl.getEmbed = async (uniqueIdentifier, manifestType = 'mps', manifestVersion = '3', height = 700, width = 1200, productionOverride = '') => {
+embedCtrl.getEmbed = async (uniqueIdentifier, manifestType = 'mps', manifestVersion = '3', height = '100%', width = '100%', productionOverride = '') => {
 
   let embedUrl = process.env.EMBED_BASE_URL;
 
