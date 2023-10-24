@@ -4,7 +4,7 @@
   <%~ includeFile("./intro-message") %>
   <% if (it.viewerURL) { %>
   <div class="row">
-    <div class="col-md-12">
+    <div class="col-md-12 viewer-wrapper">
       <%~ it.viewerURL %>
     </div>
   </div>
