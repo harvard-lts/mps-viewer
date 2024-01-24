@@ -9,3 +9,6 @@ HTTPS_REJECT_UNAUTHORIZED=false
 
 # Determine what pdiiif coverpage endpoint to use
 PDIIIF_COVERPAGE_ENDPOINT=http://localhost:8080/api/coverpage
+
+# Set this to true to log to stdout. Set it to false to log to files. Default is false.
+LOG_TO_STDOUT=false
