@@ -5,7 +5,7 @@ const os = require('os');
 const hostname = os.hostname();
 const rfs = require('rotating-file-stream');
 require('winston-daily-rotate-file');
-const dateFns = require('date-fns');
+const dateFns = require('date-fns')
 
 const logger = {};
 
@@ -22,26 +22,6 @@ logger.skipRoutes = [
   "/favicon.ico"
 ];
 
-let consoleTransports = '';
-if (process.env.LOG_TO_STDOUT === 'false') {
-    consoleTransports = [
-      new transports.DailyRotateFile(
-        {
-          filename: `${hostname}_console_%DATE%.log`,
-          dirname: `logs`,
-          dateFormat: logger.dateFormatStr,
-          maxSize: '20m',
-          maxFiles: '14d'
-        }),
-      new transports.Console({ format: format.simple() })
-    ]
-}
-else {
-    consoleTransports = [
-      new transports.Console({ format: format.simple() })
-    ];
-}
-
 logger.skipLogs = (req, res) => {
   let skipLogsAnswer = false;
   logger.skipRoutes.forEach(routeToSkip => {
@@ -51,6 +31,22 @@ logger.skipLogs = (req, res) => {
   });
   return skipLogsAnswer;
 }
+
+let mytransports = [];
+if (!process.env.SKIP_FILE_LOGGING) { 
+  mytransports.push( 
+    new transports.DailyRotateFile({
+      filename: `${hostname}_console_%DATE%.log`,
+      dirname: `logs`,
+      dateFormat: logger.dateFormatStr,
+      maxSize: '20m',
+      maxFiles: '14d'      
+    })
+  );
+}
+mytransports.push(
+  new transports.Console({ format: format.simple() })
+)
 
 const loggerFormat = printf(info => {
   if(info instanceof Error) {
@@ -67,11 +63,11 @@ logger.console = createLogger({
     timestamp(),
     loggerFormat
   ),
-  transports: consoleTransports
+  transports: mytransports
 });
 
-if (process.env.LOG_TO_STDOUT === 'false') {
-  // API request logs write to file config
+if (!process.env.SKIP_FILE_LOGGING) {
+// API request logs write to file config
   logger.requestLogStream = rfs.createStream(`./${hostname}_request_${logger.dateNow}.log`, {
     interval: '1d', // Rotate daily
     maxFiles: 30, // Maximum number of rotated files to keep in storage

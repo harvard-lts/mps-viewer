@@ -45,7 +45,11 @@ app.use(cookieParser(process.env.COOKIE_SECRET));
 // Log API requests to console
 app.use(requestLogger('dev', { skip: skipLogs }));
 // Log API requests in the Apache combined format to one log file per day
-app.use(requestLogger('combined', { stream: requestLogStream, flags: 'a', skip: skipLogs }));
+if (process.env.SKIP_FILE_LOGGING ){
+    app.use(requestLogger('combined', {skip: skipLogs }));
+} else {
+    app.use(requestLogger('combined', { stream: requestLogStream, flags: 'a', skip: skipLogs }));
+}
 
 // Routes
 app.use(['/healthcheck'], (req, res, next) => {
