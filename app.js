@@ -3,8 +3,7 @@
 const express = require('express');
 const path = require('path');
 const favicon = require('serve-favicon');
-const requestLogStream = require('./logger/logger.js').requestLogStream;
-const consoleLogger = require('./logger/logger.js').console;
+const { requestLogStream, console: consoleLogger, skipLogs } = require('./logger/logger.js');
 const requestLogger = require('morgan');
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
@@ -42,17 +41,15 @@ app.use(express.urlencoded({ extended: false }));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser(process.env.COOKIE_SECRET));
 
-/* Logs for API requests */
-// Logs to skip based on url pattern
-function skipLog(req, res) {
-    const answer = req.originalUrl.indexOf('healthcheck') > -1;
-    return answer;
-}
 // Request Logger
 // Log API requests to console
-app.use(requestLogger('dev', { skip: skipLog }));
+app.use(requestLogger('dev', { skip: skipLogs }));
 // Log API requests in the Apache combined format to one log file per day
-app.use(requestLogger('combined', { stream: requestLogStream, flags: 'a', skip: skipLog }));
+if (process.env.SKIP_FILE_LOGGING ){
+    app.use(requestLogger('combined', {skip: skipLogs }));
+} else {
+    app.use(requestLogger('combined', { stream: requestLogStream, flags: 'a', skip: skipLogs }));
+}
 
 // Routes
 app.use(['/healthcheck'], (req, res, next) => {
