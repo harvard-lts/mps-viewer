@@ -11,14 +11,7 @@ RUN apt update -y && \
 RUN deluser --remove-home node && \
   DEBIAN_FRONTEND=non-interactive && \
   groupadd -g ${GROUP_ID_NUMBER} ${GROUP_ID_NAME} && \
-  useradd -l -s /bin/bash -m -u ${APP_ID_NUMBER} -g ${GROUP_ID_NAME} ${APP_ID_NAME}
-
-RUN mkdir -p /home/node/ssl/certs && \
-  cp /etc/ssl/openssl.cnf /home/node/ssl/openssl.cnf && \
-  printf "[SAN]\nsubjectAltName=DNS:*.hul.harvard.edu,DNS:*.lts.harvard.edu" >> /home/node/ssl/openssl.cnf && \
-  openssl req -new -newkey rsa:4096 -days 3650 -nodes -x509 -subj "/C=US/ST=Massachusetts/L=Cambridge/O=Library Technology Services/CN=*.lib.harvard.edu" -extensions SAN -reqexts SAN -config /home/node/ssl/openssl.cnf -keyout /home/node/ssl/certs/server.key -out /home/node/ssl/certs/server.crt && \
-  mkdir -p /home/${APP_ID_NAME} && \
-  chown -R ${APP_ID_NAME}:${GROUP_ID_NAME} /home/node && \
+  useradd -l -s /bin/bash -m -u ${APP_ID_NUMBER} -g ${GROUP_ID_NAME} ${APP_ID_NAME} && \
   chown -R ${APP_ID_NAME}:${GROUP_ID_NAME} /home/${APP_ID_NAME}
 
 # Guarantees umask is set properly to alleviate issue with umask not sticking inside the node container
