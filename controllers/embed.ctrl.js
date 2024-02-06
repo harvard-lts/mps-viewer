@@ -34,7 +34,7 @@ embedCtrl.getEmbed = async (uniqueIdentifier, manifestType = 'mps', manifestVers
   try {
     data = await httpCtrl.makeRequest(requestOptionsData);
   } catch(e) {
-    consoleLogger.error(e);
+    consoleLogger.error(e.message);
     throw new Error(e);
   }
 
