@@ -7,7 +7,7 @@ version: '3.7'
 services:
 
   app:
-    image: registry.lts.harvard.edu/lts/mps-viewer:0.1.0
+    image: artifactory.huit.harvard.edu/lts/mps-viewer:k8s
     build:
       context: ./
       dockerfile: Dockerfile
