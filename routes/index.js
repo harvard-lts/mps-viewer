@@ -74,6 +74,7 @@ router.get("/example/:manifestType/:uniqueIdentifier", async (req, res) => {
     let title = '';
     let iiifManifest = '';
     let errorMsg = '';
+    let embed = '';
     // Unique identifier will be a urn (mps) or record identifier (legacy)
     const uniqueIdentifier = req.params.uniqueIdentifier;
     // Manifest type will be either 'mps' or 'legacy'
@@ -92,7 +93,7 @@ router.get("/example/:manifestType/:uniqueIdentifier", async (req, res) => {
     try {
       embed = await embedCtrl.getEmbed(uniqueIdentifier, manifestType, manifestVersion, height, width, productionOverride);
     } catch(e) {
-      consoleLogger.error(e);
+      consoleLogger.error(e.message);
     }
 
     if (embed) {
