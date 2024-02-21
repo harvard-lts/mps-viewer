@@ -6,7 +6,7 @@ ENV GROUP_ID_NUMBER=199
 ENV GROUP_ID_NAME=appadmin
 
 RUN apt update -y && \
-  apt install -y curl git openssl
+  apt install -y git openssl
 
 RUN deluser --remove-home node && \
   DEBIAN_FRONTEND=non-interactive && \
